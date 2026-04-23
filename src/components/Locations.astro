@@ -1,0 +1,164 @@
+---
+---
+<section id="locations" style="background:var(--c-surface)">
+    <div class="wrap">
+        <div class="s-head" data-reveal="up">
+            <span class="t-sm">Service Network</span>
+            <h2 class="t-h2" style="margin-top:14px;margin-bottom:16px">75 Cities. 5 States.<br/><em>One Trusted Name.</em></h2>
+            <p class="t-body">PackersHub operates across the entire South India region. Click any city to get a WhatsApp quote instantly.</p>
+        </div>
+
+        <!-- State navigation -->
+        <div class="state-nav" data-reveal="up" style="transition-delay:100ms">
+            <button class="state-btn active" data-state="ap">🏛️ Andhra Pradesh (20)</button>
+            <button class="state-btn" data-state="ts">🌆 Telangana (14)</button>
+            <button class="state-btn" data-state="tn">🌅 Tamil Nadu (16)</button>
+            <button class="state-btn" data-state="ka">🌳 Karnataka (15)</button>
+            <button class="state-btn" data-state="kl">🌴 Kerala (10)</button>
+        </div>
+
+        <div class="cities-grid" id="citiesGrid" data-reveal="up" style="transition-delay:200ms">
+            <!-- Dynamically injected -->
+        </div>
+
+        <!-- State landing cards -->
+        <div class="state-landing" style="margin-top:80px">
+            <div class="s-head" data-reveal="up" style="margin-bottom:0">
+                <span class="t-sm">State-Wise Service</span>
+                <h2 class="t-h2" style="margin-top:14px;margin-bottom:16px">Explore by State</h2>
+            </div>
+            <div class="state-cards" data-reveal="up" style="transition-delay:100ms">
+                <div class="state-card" data-msg="Andhra Pradesh">
+                    <span class="sc-emoji">🏛️</span>
+                    <div class="sc-name">Andhra Pradesh</div>
+                    <div class="sc-sub">20 Major Cities</div>
+                </div>
+                <div class="state-card" data-msg="Telangana">
+                    <span class="sc-emoji">🌆</span>
+                    <div class="sc-name">Telangana</div>
+                    <div class="sc-sub">14 Major Cities</div>
+                </div>
+                <div class="state-card" data-msg="Tamil Nadu">
+                    <span class="sc-emoji">🌅</span>
+                    <div class="sc-name">Tamil Nadu</div>
+                    <div class="sc-sub">16 Major Cities</div>
+                </div>
+                <div class="state-card" data-msg="Karnataka">
+                    <span class="sc-emoji">🌳</span>
+                    <div class="sc-name">Karnataka</div>
+                    <div class="sc-sub">15 Major Cities</div>
+                </div>
+                <div class="state-card" data-msg="Kerala">
+                    <span class="sc-emoji">🌴</span>
+                    <div class="sc-name">Kerala</div>
+                    <div class="sc-sub">10 Major Cities</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .state-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; justify-content: center; }
+    .state-btn {
+        padding: 9px 20px; border-radius: var(--r-full);
+        font-size: 13.5px; font-weight: 700;
+        background: var(--c-surface); color: var(--c-muted);
+        border: 1.5px solid var(--c-border);
+        transition: all var(--dur-fast); cursor: pointer;
+    }
+    .state-btn.active, .state-btn:hover { background: var(--c-brand); color: #fff; border-color: var(--c-brand); }
+    
+    .cities-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; min-height: 200px; }
+    .city-tile {
+        background: var(--c-surface); border-radius: var(--r-md);
+        padding: 16px 14px; text-align: center;
+        border: 1.5px solid var(--c-border);
+        cursor: pointer;
+        transition: all var(--dur-base) var(--ease-spring);
+    }
+    .city-tile:hover { border-color: var(--c-brand); background: rgba(10,37,64,.04); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .city-emoji { font-size: 20px; margin-bottom: 6px; display: block; }
+    .city-name { font-size: 12.5px; font-weight: 700; color: var(--c-ink); }
+    .city-label { font-size: 11px; color: var(--c-faint); margin-top: 2px; }
+
+    .state-cards { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; margin-top: 48px; }
+    .state-card {
+        background: var(--c-surface); border-radius: var(--r-xl);
+        padding: 32px 20px; text-align: center;
+        border: 1px solid var(--c-border);
+        cursor: pointer;
+        transition: all var(--dur-base) var(--ease-spring);
+    }
+    .state-card:hover { background: var(--c-brand); color: #fff; transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .state-card:hover .sc-sub { color: rgba(255,255,255,.6); }
+    .sc-emoji { font-size: 40px; margin-bottom: 14px; display: block; }
+    .sc-name { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+    .sc-sub { font-size: 12px; color: var(--c-muted); }
+
+    @media(max-width:1100px) {
+        .cities-grid { grid-template-columns: repeat(4,1fr); }
+        .state-cards { grid-template-columns: repeat(3,1fr); }
+    }
+    @media(max-width:720px) {
+        .cities-grid { grid-template-columns: repeat(2,1fr); }
+        .state-cards { grid-template-columns: repeat(2,1fr); }
+    }
+</style>
+
+<script>
+    const cities = {
+        ap:[
+            {n:'Nellore',e:'🌊',s:'HQ'}, {n:'Tirupati',e:'🛕',s:'AP'}, {n:'Vijayawada',e:'🏙️',s:'AP'}, {n:'Visakhapatnam',e:'🌅',s:'AP'}, {n:'Guntur',e:'🌶️',s:'AP'}, {n:'Kakinada',e:'⚓',s:'AP'}, {n:'Rajahmundry',e:'🌉',s:'AP'}, {n:'Kurnool',e:'🏛️',s:'AP'}, {n:'Kadapa',e:'🏜️',s:'AP'}, {n:'Eluru',e:'🌿',s:'AP'}, {n:'Ongole',e:'🐃',s:'AP'}, {n:'Nandyal',e:'🏔️',s:'AP'}, {n:'Anantapur',e:'☀️',s:'AP'}, {n:'Chittoor',e:'🌲',s:'AP'}, {n:'Srikakulam',e:'🌊',s:'AP'}, {n:'Vizianagaram',e:'🏯',s:'AP'}, {n:'Machilipatnam',e:'⛵',s:'AP'}, {n:'Tenali',e:'🌾',s:'AP'}, {n:'Proddatur',e:'🌺',s:'AP'}, {n:'Amaravati',e:'🏛️',s:'Capital'}
+        ],
+        ts:[
+            {n:'Hyderabad',e:'🕌',s:'TS'}, {n:'Warangal',e:'🏰',s:'TS'}, {n:'Nizamabad',e:'🌿',s:'TS'}, {n:'Karimnagar',e:'🌾',s:'TS'}, {n:'Khammam',e:'🌳',s:'TS'}, {n:'Ramagundam',e:'⚡',s:'TS'}, {n:'Mahbubnagar',e:'🌺',s:'TS'}, {n:'Nalgonda',e:'🏜️',s:'TS'}, {n:'Adilabad',e:'🌲',s:'TS'}, {n:'Suryapet',e:'☀️',s:'TS'}, {n:'Miryalaguda',e:'🌊',s:'TS'}, {n:'Mancherial',e:'🏭',s:'TS'}, {n:'Jagtial',e:'🌿',s:'TS'}, {n:'Siddipet',e:'🌾',s:'TS'}
+        ],
+        tn:[
+            {n:'Chennai',e:'🏖️',s:'TN'}, {n:'Coimbatore',e:'🏭',s:'TN'}, {n:'Madurai',e:'🛕',s:'TN'}, {n:'Trichy',e:'🏯',s:'TN'}, {n:'Salem',e:'🌆',s:'TN'}, {n:'Tirunelveli',e:'⛪',s:'TN'}, {n:'Vellore',e:'🏰',s:'TN'}, {n:'Erode',e:'🌿',s:'TN'}, {n:'Thoothukudi',e:'⚓',s:'TN'}, {n:'Dindigul',e:'⛰️',s:'TN'}, {n:'Thanjavur',e:'🏛️',s:'TN'}, {n:'Tirupur',e:'👕',s:'TN'}, {n:'Hosur',e:'🚗',s:'TN'}, {n:'Nagercoil',e:'🌴',s:'TN'}, {n:'Ooty',e:'🏔️',s:'TN'}, {n:'Kanchipuram',e:'👘',s:'TN'}
+        ],
+        ka:[
+            {n:'Bangalore',e:'💻',s:'KA'}, {n:'Mysore',e:'🏰',s:'KA'}, {n:'Hubli',e:'🌆',s:'KA'}, {n:'Mangalore',e:'⚓',s:'KA'}, {n:'Belgaum',e:'⛰️',s:'KA'}, {n:'Gulbarga',e:'🏛️',s:'KA'}, {n:'Davanagere',e:'🌾',s:'KA'}, {n:'Bellary',e:'🏜️',s:'KA'}, {n:'Bijapur',e:'🕌',s:'KA'}, {n:'Shimoga',e:'🌲',s:'KA'}, {n:'Tumkur',e:'🌇',s:'KA'}, {n:'Raichur',e:'⚡',s:'KA'}, {n:'Hassan',e:'🛕',s:'KA'}, {n:'Udupi',e:'🌊',s:'KA'}, {n:'Bidar',e:'🏰',s:'KA'}
+        ],
+        kl:[
+            {n:'Kochi',e:'⚓',s:'KL'}, {n:'Trivandrum',e:'🏛️',s:'KL'}, {n:'Kozhikode',e:'🌅',s:'KL'}, {n:'Thrissur',e:'🐘',s:'KL'}, {n:'Kollam',e:'🌊',s:'KL'}, {n:'Palakkad',e:'🏞️',s:'KL'}, {n:'Alappuzha',e:'🛶',s:'KL'}, {n:'Kannur',e:'🏖️',s:'KL'}, {n:'Kottayam',e:'📚',s:'KL'}, {n:'Malappuram',e:'⚽',s:'KL'}
+        ]
+    };
+
+    const grid = document.getElementById('citiesGrid');
+    const btns = document.querySelectorAll('.state-btn');
+
+    function renderCities(state) {
+        if (!grid) return;
+        grid.style.opacity = '0';
+        setTimeout(() => {
+            grid.innerHTML = cities[state].map(c => `
+                <div class="city-tile" onclick="window.open('https://wa.me/917730912913?text=${encodeURIComponent('Hi PackersHub! I need a quote for relocation in ' + c.n + '.')}', '_blank')">
+                    <span class="city-emoji">${c.e}</span>
+                    <div class="city-name">${c.n}</div>
+                    <div class="city-label">${c.s}</div>
+                </div>
+            `).join('');
+            grid.style.opacity = '1';
+        }, 200);
+    }
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderCities(btn.dataset.state);
+        });
+    });
+
+    // Initialize with AP
+    renderCities('ap');
+
+    // State card clicks
+    document.querySelectorAll('.state-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const state = card.dataset.msg;
+            window.open(`https://wa.me/917730912913?text=${encodeURIComponent('Hi! I need packers and movers in ' + state + '.')}`, '_blank');
+        });
+    });
+</script>

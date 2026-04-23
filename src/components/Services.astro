@@ -1,0 +1,103 @@
+---
+---
+<section id="services">
+    <div class="wrap">
+        <div class="s-head" data-reveal="up">
+            <span class="t-sm">Our Services</span>
+            <h2 class="t-h2" style="margin-top:14px;margin-bottom:16px">Complete Moving Solutions.<br/><em>Zero Worries.</em></h2>
+            <p class="t-body">From your first fragile item to the last piece of furniture — we handle every part of your move with professional care and precision.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:60ms">
+                <span class="service-num">01</span>
+                <div class="service-icon-wrap">🏠</div>
+                <div class="service-title">House Shifting</div>
+                <div class="service-desc">Complete residential relocation — packing, loading, transport, unloading, and reassembly at your new home.</div>
+                <ul class="service-list"><li>Expert packing of all items</li><li>Furniture dismantling & assembly</li><li>Timely guaranteed delivery</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for House Shifting." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:130ms">
+                <span class="service-num">02</span>
+                <div class="service-icon-wrap">🚗</div>
+                <div class="service-title">Car Transport</div>
+                <div class="service-desc">Enclosed carrier transport with GPS tracking, full insurance, and door-to-door delivery for your vehicle.</div>
+                <ul class="service-list"><li>Enclosed carrier transport</li><li>Full transit insurance</li><li>GPS live tracking</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for Car Transport." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:200ms">
+                <span class="service-num">03</span>
+                <div class="service-icon-wrap">🏍️</div>
+                <div class="service-title">Bike Shifting</div>
+                <div class="service-desc">Secure two-wheeler transport with protective wrapping, custom strapping, and zero-scratch delivery guarantee.</div>
+                <ul class="service-list"><li>Protective foam wrapping</li><li>Secure hydraulic strapping</li><li>Zero-scratch policy</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for Bike Shifting." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:60ms">
+                <span class="service-num">04</span>
+                <div class="service-icon-wrap">🏢</div>
+                <div class="service-title">Office Relocation</div>
+                <div class="service-desc">Minimum downtime, maximum efficiency. We move offices overnight so your team starts Monday in a fully set-up workspace.</div>
+                <ul class="service-list"><li>Weekend & overnight moves</li><li>IT equipment specialists</li><li>Complete reassembly</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for Office Relocation." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:130ms">
+                <span class="service-num">05</span>
+                <div class="service-icon-wrap">📦</div>
+                <div class="service-title">Packing & Unpacking</div>
+                <div class="service-desc">Premium materials — bubble wrap, foam sheets, custom crates. Complete unpacking and arranged placement at destination.</div>
+                <ul class="service-list"><li>Premium packing materials</li><li>Fragile item specialists</li><li>Organised unpacking</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for Packing & Unpacking." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+            <div class="service-card card-3d" data-reveal="up" style="transition-delay:200ms">
+                <span class="service-num">06</span>
+                <div class="service-icon-wrap">💪</div>
+                <div class="service-title">Loading & Unloading</div>
+                <div class="service-desc">Trained professionals with the right equipment for safe heavy lifting. Your property and goods stay damage-free.</div>
+                <ul class="service-list"><li>Trained professional crew</li><li>Modern equipment</li><li>Zero-damage guarantee</li></ul>
+                <a href="https://wa.me/917730912913?text=Hi! I need a quote for Loading & Unloading." class="btn btn-primary btn-sm">Get Quote →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #services { background: var(--c-surface); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .service-card {
+        border-radius: var(--r-xl); padding: 36px 32px;
+        border: 1px solid var(--c-border); background: var(--c-bg);
+        position: relative; overflow: hidden;
+        transition: all var(--dur-base) var(--ease-spring);
+        cursor: pointer;
+    }
+    .service-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, var(--c-brand), var(--c-accent));
+        transform: scaleX(0); transform-origin: left;
+        transition: transform var(--dur-base) var(--ease-out);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .service-card:hover::before { transform: scaleX(1); }
+    
+    .service-num {
+        font-family: var(--f-display); font-size: 48px; font-weight: 900;
+        color: rgba(10,37,64,.06); line-height: 1; margin-bottom: 20px;
+        display: block; letter-spacing: -.04em;
+    }
+    .service-icon-wrap {
+        width: 56px; height: 56px; background: var(--c-surface);
+        border-radius: 14px; display: grid; place-items: center;
+        font-size: 24px; margin-bottom: 20px;
+        box-shadow: var(--shadow-xs); border: 1px solid var(--c-border);
+        transition: all var(--dur-base) var(--ease-spring);
+    }
+    .service-card:hover .service-icon-wrap { background: var(--c-brand); transform: rotate(-8deg) scale(1.1); }
+    .service-title { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .service-desc { font-size: 14px; color: var(--c-muted); line-height: 1.65; margin-bottom: 20px; }
+    .service-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+    .service-list li { font-size: 13px; color: var(--c-muted); padding-left: 18px; position: relative; }
+    .service-list li::before { content: '✓'; position: absolute; left: 0; color: var(--c-green); font-weight: 700; }
+
+    @media(max-width:1100px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:720px) { .services-grid { grid-template-columns: 1fr; } }
+</style>

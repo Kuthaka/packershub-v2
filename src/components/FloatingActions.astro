@@ -1,0 +1,38 @@
+---
+---
+<div class="float-actions">
+    <a class="float-btn float-wa" href="https://wa.me/917730912913?text=Hello! I need a moving quote from PackersHub." target="_blank" rel="noopener">
+        <span class="fb-icon">💬</span>
+        <span class="fb-text">WhatsApp Us</span>
+    </a>
+    <a class="float-btn float-call" href="tel:+917730912913">
+        <span class="fb-icon">📞</span>
+        <span class="fb-text">Call Now</span>
+    </a>
+</div>
+
+<style>
+    .float-actions {
+        position: fixed; bottom: 28px; right: 28px; z-index: 999;
+        display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
+    }
+    .float-btn {
+        display: flex; align-items: center; gap: 10px;
+        padding: 14px 20px; border-radius: var(--r-full);
+        font-size: 13.5px; font-weight: 700; color: #fff;
+        box-shadow: var(--shadow-lg);
+        transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
+        cursor: pointer; text-decoration: none;
+    }
+    .float-btn:hover { transform: translateX(-4px); box-shadow: var(--shadow-xl); }
+    .float-wa { background: #25D366; }
+    .float-call { background: var(--c-brand); }
+    .float-btn .fb-icon { font-size: 20px; flex-shrink: 0; }
+    .float-btn .fb-text { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .4s var(--ease-out); }
+    .float-btn:hover .fb-text { max-width: 160px; }
+
+    @media(max-width:720px) {
+        .float-actions { bottom: 16px; right: 16px; }
+        .fb-text { display: none; }
+    }
+</style>

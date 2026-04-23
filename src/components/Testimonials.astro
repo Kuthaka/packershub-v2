@@ -1,0 +1,40 @@
+---
+---
+<section id="testimonials">
+    <div class="wrap">
+        <div class="s-head" data-reveal="up">
+            <span class="t-sm">Customer Stories</span>
+            <h2 class="t-h2" style="margin-top:14px;margin-bottom:16px">5,000+ Families.<br/><em>Zero Regrets.</em></h2>
+            <p class="t-body">Real words from real people who trusted PackersHub with their most important move.</p>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card" data-reveal="up" style="transition-delay:60ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"PackersHub made our Hyderabad to Vizag move absolutely seamless. Every single item arrived in perfect condition. Their team was extraordinarily professional — and they treated our antiques as if they were their own."</div><div class="testi-author"><div class="testi-avatar">PS</div><div><div class="testi-name">Priya Sharma</div><div class="testi-route">📍 Hyderabad → Visakhapatnam</div></div></div></div>
+            <div class="testi-card" data-reveal="up" style="transition-delay:130ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"Our 60-person office in HITEC City moved over one weekend. Monday morning, every workstation was set up, every cable connected. My team walked in and didn't even realise we'd moved. Exceptional."</div><div class="testi-author"><div class="testi-avatar">RK</div><div><div class="testi-name">Rajesh Kumar</div><div class="testi-route">📍 HITEC City Office Relocation</div></div></div></div>
+            <div class="testi-card" data-reveal="up" style="transition-delay:200ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"I tracked my furniture on GPS the whole 700km from Nellore to Bangalore. Everything arrived on time, nothing damaged. That live tracking feature alone is worth it — pure peace of mind."</div><div class="testi-author"><div class="testi-avatar">AR</div><div><div class="testi-name">Anitha Reddy</div><div class="testi-route">📍 Nellore → Bangalore</div></div></div></div>
+            <div class="testi-card" data-reveal="up" style="transition-delay:60ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"As a Navy officer transferring from Visakhapatnam, I've used movers six times in my career. PackersHub understood our documentation, knew the base access protocols, and delivered without a single issue."</div><div class="testi-author"><div class="testi-avatar">VR</div><div><div class="testi-name">Cdr. Venkatesh Rao</div><div class="testi-route">📍 Visakhapatnam Naval Transfer</div></div></div></div>
+            <div class="testi-card" data-reveal="up" style="transition-delay:130ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"Moving to Ooty meant that terrifying ghat road. PackersHub sent a smaller truck with a driver who clearly knew every hairpin. Our belongings arrived without a scratch. I would use them again without a second thought."</div><div class="testi-author"><div class="testi-avatar">LD</div><div><div class="testi-name">Lakshmi Devi</div><div class="testi-route">📍 Coimbatore → Ooty Ghat Route</div></div></div></div>
+            <div class="testi-card" data-reveal="up" style="transition-delay:200ms"><div class="quote-mark">"</div><div class="testi-stars">★★★★★</div><div class="testi-text">"NRI return to Kochi is complicated — port coordination, customs, last-mile delivery. PackersHub handled all of it. I made one phone call from Dubai and everything happened. Truly incredible service."</div><div class="testi-author"><div class="testi-avatar">SC</div><div><div class="testi-name">Sunitha Chandran</div><div class="testi-route">📍 Dubai → Kochi NRI Return</div></div></div></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #testimonials { background: var(--c-surface); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .testi-card {
+        background: var(--c-bg); border-radius: var(--r-xl); padding: 32px;
+        border: 1px solid var(--c-border); transition: all var(--dur-base) var(--ease-spring);
+        position: relative;
+    }
+    .testi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .testi-card .quote-mark { font-family: var(--f-display); font-size: 80px; color: rgba(10,37,64,.06); line-height: .8; position: absolute; top: 20px; left: 24px; }
+    .testi-stars { display: flex; gap: 3px; font-size: 14px; color: var(--c-gold); margin-bottom: 16px; }
+    .testi-text { font-size: 15px; color: var(--c-muted); line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--c-brand), var(--c-accent)); display: grid; place-items: center; font-family: var(--f-display); font-size: 17px; color: #fff; font-weight: 900; }
+    .testi-name { font-size: 14px; font-weight: 700; }
+    .testi-route { font-size: 12px; color: var(--c-faint); margin-top: 2px; }
+
+    @media(max-width:1100px) { .testi-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:720px) { .testi-grid { grid-template-columns: 1fr; } }
+</style>

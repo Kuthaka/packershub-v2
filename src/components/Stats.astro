@@ -1,0 +1,35 @@
+---
+---
+<section id="stats">
+    <div class="wrap">
+        <div class="stats-row">
+            <div class="stat-block" data-reveal="up">
+                <div class="big metric-num" data-count="5000">0</div>
+                <div class="lbl">Moves Completed</div>
+            </div>
+            <div class="stat-block" data-reveal="up" style="transition-delay:100ms">
+                <div class="big metric-num" data-count="75">0</div>
+                <div class="lbl">Cities Covered</div>
+            </div>
+            <div class="stat-block" data-reveal="up" style="transition-delay:200ms">
+                <div class="big metric-num" data-count="10">0</div>
+                <div class="lbl">Years Experience</div>
+            </div>
+            <div class="stat-block" data-reveal="up" style="transition-delay:300ms">
+                <div class="big metric-num" data-count="100">0</div>
+                <div class="lbl">Trained Pros</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #stats { background: var(--c-accent); padding: 80px 0; }
+    .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+    .stat-block { text-align: center; padding: 20px; border-right: 1px solid rgba(255,255,255,.2); }
+    .stat-block:last-child { border-right: none; }
+    .stat-block .big { font-family: var(--f-display); font-size: clamp(42px,5vw,72px); font-weight: 900; color: #fff; line-height: 1; }
+    .stat-block .lbl { font-size: 13px; color: rgba(255,255,255,.75); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-top: 8px; font-family: var(--f-mono); }
+
+    @media(max-width:720px) { .stats-row { grid-template-columns: 1fr 1fr; } .stat-block:nth-child(2) { border-right: none; } .stat-block:nth-child(3), .stat-block:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.2); } }
+</style>

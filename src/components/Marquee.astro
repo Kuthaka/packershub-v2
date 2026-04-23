@@ -1,0 +1,56 @@
+---
+---
+<div class="marquee-wrap">
+    <div class="marquee-track">
+        <div class="marquee-item"><span class="star">★</span> House Shifting</div>
+        <div class="marquee-item"><span class="star">★</span> Office Relocation</div>
+        <div class="marquee-item"><span class="star">★</span> Car Transport</div>
+        <div class="marquee-item"><span class="star">★</span> Bike Shifting</div>
+        <div class="marquee-item"><span class="star">★</span> Packing & Unpacking</div>
+        <div class="marquee-item"><span class="star">★</span> 5 States · 75 Cities</div>
+        <div class="marquee-item"><span class="star">★</span> GPS Tracked</div>
+        <div class="marquee-item"><span class="star">★</span> Fully Insured</div>
+        <div class="marquee-item"><span class="star">★</span> 5,000+ Happy Moves</div>
+        <div class="marquee-item"><span class="star">★</span> Nellore → Hyderabad</div>
+        <div class="marquee-item"><span class="star">★</span> Chennai → Bangalore</div>
+        <div class="marquee-item"><span class="star">★</span> Kochi → Bengaluru</div>
+        <!-- Duplicate for infinite effect -->
+        <div class="marquee-item"><span class="star">★</span> House Shifting</div>
+        <div class="marquee-item"><span class="star">★</span> Office Relocation</div>
+        <div class="marquee-item"><span class="star">★</span> Car Transport</div>
+        <div class="marquee-item"><span class="star">★</span> Bike Shifting</div>
+        <div class="marquee-item"><span class="star">★</span> Packing & Unpacking</div>
+        <div class="marquee-item"><span class="star">★</span> 5 States · 75 Cities</div>
+        <div class="marquee-item"><span class="star">★</span> GPS Tracked</div>
+        <div class="marquee-item"><span class="star">★</span> Fully Insured</div>
+        <div class="marquee-item"><span class="star">★</span> 5,000+ Happy Moves</div>
+        <div class="marquee-item"><span class="star">★</span> Nellore → Hyderabad</div>
+        <div class="marquee-item"><span class="star">★</span> Chennai → Bangalore</div>
+        <div class="marquee-item"><span class="star">★</span> Kochi → Bengaluru</div>
+    </div>
+</div>
+
+<style>
+    .marquee-wrap {
+        background: var(--c-brand); padding: 18px 0;
+        overflow: hidden; position: relative;
+    }
+    .marquee-track {
+        display: flex; gap: 56px;
+        animation: marquee 28s linear infinite;
+        width: max-content;
+    }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    .marquee-item {
+        display: flex; align-items: center; gap: 12px;
+        font-family: var(--f-ui); font-size: 13px; font-weight: 700;
+        color: rgba(255,255,255,0.7); white-space: nowrap;
+        letter-spacing: .02em;
+    }
+    .marquee-item .star { color: var(--c-accent); }
+    
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+</style>

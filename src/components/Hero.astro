@@ -1,0 +1,262 @@
+---
+---
+<section id="hero" class="noise">
+    <div class="hero-canvas">
+        <div class="geo-shape g1"></div>
+        <div class="geo-shape g2"></div>
+        <div class="geo-shape g3"></div>
+        <div class="hero-grid-lines"></div>
+    </div>
+    <div class="hero-inner">
+        <!-- Left column -->
+        <div class="hero-left">
+            <div class="hero-eyebrow" data-reveal="up">
+                <div class="live-badge">
+                    <span class="dot"></span>
+                    Serving 75+ Cities
+                </div>
+                <span class="chip chip-gold">⭐ 4.9/5 · 5,000+ Moves</span>
+            </div>
+            <div class="hero-title t-display">
+                <div class="line"><span>Move</span></div>
+                <div class="line"><span class="accent-line"><em>Smarter.</em></span></div>
+                <div class="line"><span>Move Safe.</span></div>
+            </div>
+            <p class="hero-desc" data-reveal="up" data-delay="200">
+                South India's most trusted packers and movers — serving <strong>75 cities across 5 states</strong>. GPS-tracked, fully insured, transparent pricing. Your things arrive safe. Always.
+            </p>
+            <div class="hero-actions" data-reveal="up" data-delay="300">
+                <a href="https://wa.me/917730912913?text=Hello! I need a free moving quote from PackersHub." class="btn btn-wa btn-lg">💬 WhatsApp Free Quote</a>
+                <a href="tel:+917730912913" class="btn btn-primary btn-lg">📞 +91 77309 12913</a>
+            </div>
+            <div class="hero-metrics" data-reveal="up" data-delay="400">
+                <div class="metric">
+                    <span class="metric-num" data-count="10">0</span>
+                    <div class="metric-label">Years of Trust</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-num" data-count="5000">0</span>
+                    <div class="metric-label">Happy Families</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-num" data-count="75">0</span>
+                    <div class="metric-label">Cities Covered</div>
+                </div>
+                <div class="metric">
+                    <span class="metric-num" data-count="5">0</span>
+                    <div class="metric-label">States Network</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column: Form card -->
+        <div class="hero-right" data-reveal="right" data-delay="200">
+            <div class="hero-card card-3d">
+                <div class="form-title">🚚 Get Instant Quote</div>
+                <div class="form-sub">Tell us your move — we respond in under 30 minutes.</div>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="h-name" placeholder="Enter your full name"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="h-phone" placeholder="+91 XXXXX XXXXX"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Move Date</label>
+                        <input type="date" id="h-date"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Moving From</label>
+                        <input type="text" id="h-from" placeholder="City / Area"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Moving To</label>
+                        <input type="text" id="h-to" placeholder="City / Area"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Service Type</label>
+                    <select id="h-service">
+                        <option value="">Select service...</option>
+                        <option>House Shifting</option>
+                        <option>Office / Commercial</option>
+                        <option>Car Transport</option>
+                        <option>Bike Shifting</option>
+                        <option>Packing & Unpacking</option>
+                        <option>Loading & Unloading</option>
+                    </select>
+                </div>
+                <button class="btn btn-wa form-cta" id="heroSubmit">💬 Send on WhatsApp — Free</button>
+                <div class="form-mini-trust">
+                    <div class="mini-trust-item">🔒 No spam</div>
+                    <div class="mini-trust-item">⚡ 30 min reply</div>
+                    <div class="mini-trust-item">📦 100% Free</div>
+                </div>
+            </div>
+            <div class="hero-float-cards">
+                <div class="float-card"><div class="float-icon">🛡️</div><div><div class="float-title">Fully Insured</div><div class="float-desc">All goods covered in transit</div></div></div>
+                <div class="float-card"><div class="float-icon">📍</div><div><div class="float-title">GPS Live Track</div><div class="float-desc">Real-time location updates</div></div></div>
+                <div class="float-card"><div class="float-icon">💰</div><div><div class="float-title">No Hidden Costs</div><div class="float-desc">Written quote, fixed price</div></div></div>
+                <div class="float-card"><div class="float-icon">🌙</div><div><div class="float-title">24/7 Available</div><div class="float-desc">Support anytime, in Telugu</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #hero {
+        min-height: 100vh; display: grid;
+        place-items: center; padding-top: var(--nav-h);
+        position: relative; overflow: hidden;
+        background: radial-gradient(ellipse 120% 80% at 60% 0%, rgba(10,37,64,.04) 0%, transparent 70%),
+                    linear-gradient(165deg, #F2EFE8 0%, #EAE5D9 40%, #E8E0D0 100%);
+    }
+    .hero-canvas { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .geo-shape {
+        position: absolute; border-radius: 50%; opacity: .12; mix-blend-mode: multiply;
+        animation: floatGeo 18s ease-in-out infinite; filter: blur(2px);
+    }
+    .g1 { width: 560px; height: 560px; background: radial-gradient(circle, var(--c-brand), transparent); top: -120px; right: -100px; animation-delay: 0s; }
+    .g2 { width: 380px; height: 380px; background: radial-gradient(circle, var(--c-accent), transparent); bottom: -60px; left: -80px; animation-delay: -7s; opacity: .08; }
+    .g3 { width: 220px; height: 220px; background: radial-gradient(circle, var(--c-gold), transparent); top: 40%; left: 15%; animation-delay: -13s; opacity: .09; }
+    
+    @keyframes floatGeo {
+        0%,100% { transform: translate(0,0) scale(1) rotate(0deg); }
+        33% { transform: translate(30px,-20px) scale(1.04) rotate(4deg); }
+        66% { transform: translate(-18px,14px) scale(.96) rotate(-3deg); }
+    }
+
+    .hero-grid-lines {
+        position: absolute; inset: 0;
+        background-image: linear-gradient(rgba(10,37,64,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(10,37,64,.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+    }
+
+    .hero-inner {
+        position: relative; z-index: 2;
+        display: grid; grid-template-columns: 1fr 480px; gap: 80px;
+        align-items: center; padding: 80px 24px;
+        width: 100%; max-width: var(--max-w); margin: 0 auto;
+    }
+
+    .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+    .live-badge {
+        display: inline-flex; align-items: center; gap: 7px;
+        background: rgba(10,124,92,.1); border: 1px solid rgba(10,124,92,.2);
+        color: var(--c-green); padding: 6px 14px; border-radius: var(--r-full);
+        font-size: 12px; font-weight: 700; font-family: var(--f-mono); letter-spacing: .06em;
+    }
+    .hero-title { margin-bottom: 24px; }
+    .hero-title .line { display: block; overflow: hidden; }
+    .hero-title .line span {
+        display: block;
+        animation: slideUp .9s var(--ease-out) both;
+    }
+    .hero-title .line:nth-child(2) span { animation-delay: .1s; }
+    .hero-title .line:nth-child(3) span { animation-delay: .2s; }
+    .accent-line { color: var(--c-accent); }
+
+    @keyframes slideUp { from{transform:translateY(110%)} to{transform:translateY(0)} }
+
+    .hero-desc { font-size: 18px; line-height: 1.7; color: var(--c-muted); margin-bottom: 36px; max-width: 520px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 52px; }
+    .hero-metrics { display: flex; gap: 0; border-top: 1px solid var(--c-border); padding-top: 36px; }
+    .metric { flex: 1; padding: 0 24px 0 0; border-right: 1px solid var(--c-border); }
+    .metric:last-child { border-right: none; padding-right: 0; }
+    .metric-num { font-family: var(--f-display); font-size: 36px; font-weight: 900; color: var(--c-brand); line-height: 1; display: block; margin-bottom: 4px; }
+    .metric-label { font-size: 12px; color: var(--c-faint); font-weight: 600; letter-spacing: .04em; }
+
+    /* Form Card */
+    .hero-card {
+        background: rgba(255,255,255,0.85); backdrop-filter: blur(32px) saturate(1.6);
+        border-radius: 28px; border: 1px solid rgba(255,255,255,0.6);
+        box-shadow: 0 32px 80px rgba(10,37,64,.14), 0 0 0 1px rgba(255,255,255,0.4) inset;
+        padding: 36px; position: relative; overflow: hidden;
+    }
+    .hero-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+        background: linear-gradient(90deg, var(--c-brand), var(--c-accent), var(--c-accent-warm));
+    }
+    .form-title { font-size: 20px; font-weight: 800; color: var(--c-brand); margin-bottom: 6px; }
+    .form-sub { font-size: 13px; color: var(--c-muted); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--c-faint); margin-bottom: 6px; }
+    .form-group input, .form-group select {
+        width: 100%; padding: 11px 15px; border: 1.5px solid var(--c-border); border-radius: var(--r-md);
+        font-family: var(--f-ui); font-size: 14px; color: var(--c-ink); background: rgba(247,245,240,0.7);
+        transition: all var(--dur-fast); outline: none;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--c-brand); background: #fff; box-shadow: 0 0 0 4px rgba(10,37,64,.06); }
+    .form-cta { width: 100%; justify-content: center; padding: 15px; border-radius: var(--r-md); font-size: 15px; margin-top: 6px; }
+    .form-mini-trust { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; font-size: 12px; color: var(--c-faint); font-family: var(--f-mono); }
+    .mini-trust-item { display: flex; align-items: center; gap: 5px; }
+
+    .hero-float-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .float-card {
+        background: var(--c-surface); border-radius: var(--r-md); padding: 16px; border: 1px solid var(--c-border);
+        box-shadow: var(--shadow-sm); display: flex; align-items: flex-start; gap: 12px;
+        transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
+    }
+    .float-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .float-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--c-bg-warm); border-radius: 10px; display: grid; place-items: center; font-size: 17px; }
+    .float-title { font-size: 13px; font-weight: 700; color: var(--c-ink); margin-bottom: 2px; }
+    .float-desc { font-size: 11px; color: var(--c-faint); }
+
+    @media(max-width:1100px) {
+        .hero-inner { grid-template-columns: 1fr; }
+        .hero-card { max-width: 520px; }
+    }
+    @media(max-width:720px) {
+        .hero-metrics { flex-wrap: wrap; gap: 16px; }
+        .metric { flex: 0 0 40%; border-right: none; }
+        .form-row { grid-template-columns: 1fr; }
+    }
+</style>
+
+<script>
+    // Metric Counters
+    const metrics = document.querySelectorAll('.metric-num');
+    const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        entry.target.innerText = target + (target > 100 ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        entry.target.innerText = Math.floor(current);
+                    }
+                }, 30);
+                metricObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    metrics.forEach(m => metricObserver.observe(m));
+
+    // Form Submit
+    document.getElementById('heroSubmit')?.addEventListener('click', () => {
+        const name = document.getElementById('h-name').value;
+        const phone = document.getElementById('h-phone').value;
+        const from = document.getElementById('h-from').value;
+        const to = document.getElementById('h-to').value;
+        const date = document.getElementById('h-date').value;
+        const service = document.getElementById('h-service').value;
+
+        if (!name || !phone || !from || !to) {
+            alert('Please fill in required fields');
+            return;
+        }
+
+        const msg = `Hello PackersHub! 🚚\n\nI need a quote for relocation:\n👤 Name: ${name}\n📞 Phone: ${phone}\n📦 Service: ${service}\n📅 Date: ${date}\n📍 From: ${from}\n🏁 To: ${to}\n\nPlease get back to me.`;
+        window.open(`https://wa.me/917730912913?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+</script>

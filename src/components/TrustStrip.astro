@@ -1,0 +1,36 @@
+---
+---
+<div class="trust-strip">
+    <div class="wrap">
+        <div class="trust-grid">
+            <div class="trust-item" data-reveal="up"><span class="trust-icon">🏆</span><span class="trust-text">10+ Years Experience</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:80ms"><span class="trust-icon">🛡️</span><span class="trust-text">Full Transit Insurance</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:160ms"><span class="trust-icon">📍</span><span class="trust-text">GPS Live Tracking</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:240ms"><span class="trust-icon">💯</span><span class="trust-text">No Hidden Charges</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:320ms"><span class="trust-icon">⚡</span><span class="trust-text">30-Min Response</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:400ms"><span class="trust-icon">⭐</span><span class="trust-text">4.9/5 Customer Rating</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:480ms"><span class="trust-icon">🌏</span><span class="trust-text">75 Cities · 5 States</span></div>
+            <div class="trust-item" data-reveal="up" style="transition-delay:560ms"><span class="trust-icon">📦</span><span class="trust-text">Premium Packing</span></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .trust-strip {
+        background: var(--c-surface);
+        border-bottom: 1px solid var(--c-border);
+        padding: 40px 0;
+    }
+    .trust-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .trust-item {
+        display: flex; align-items: center; gap: 12px;
+        padding: 14px 22px;
+        background: var(--c-bg);
+        border: 1px solid var(--c-border);
+        border-radius: var(--r-md);
+        transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
+    }
+    .trust-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .trust-icon { font-size: 22px; }
+    .trust-text { font-size: 13px; font-weight: 700; color: var(--c-brand); }
+</style>

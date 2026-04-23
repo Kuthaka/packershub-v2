@@ -1,0 +1,114 @@
+---
+---
+<section id="contact">
+    <div class="wrap">
+        <div class="s-head" data-reveal="up">
+            <span class="t-sm">Contact</span>
+            <h2 class="t-h2" style="margin-top:14px;margin-bottom:16px">Ready to Move?<br/><em>Let's Talk.</em></h2>
+            <p class="t-body">Free quote in 30 minutes. Our relocation specialists are standing by.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info" data-reveal="left">
+                <div class="contact-item">
+                    <div class="contact-icon-wrap">📞</div>
+                    <div><div class="contact-lbl">Phone / WhatsApp</div><div class="contact-val"><a href="tel:+917730912913">+91 77309 12913</a></div></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon-wrap">📍</div>
+                    <div><div class="contact-lbl">Headquarters</div><div class="contact-val">BV Nagar, Nellore,<br/>Andhra Pradesh – 524004</div></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon-wrap">🌐</div>
+                    <div><div class="contact-lbl">Website</div><div class="contact-val"><a href="https://packershub.in">www.packershub.in</a></div></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon-wrap">⏰</div>
+                    <div><div class="contact-lbl">Availability</div><div class="contact-val">24 / 7 · 365 Days</div></div>
+                </div>
+                <div class="contact-btns" style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+                    <a href="https://wa.me/917730912913?text=Hello! I need a moving quote from PackersHub." class="btn btn-wa btn-lg">💬 Chat on WhatsApp</a>
+                    <a href="tel:+917730912913" class="btn btn-primary btn-lg">📞 Call +91 77309 12913</a>
+                </div>
+                <div class="coverage-box">
+                    <div class="t-sm" style="margin-bottom:10px;display:block">Coverage Area</div>
+                    <div style="font-size:28px;letter-spacing:8px;text-align:center;padding:16px 0">🗺️</div>
+                    <div style="text-align:center;font-size:13px;color:var(--c-muted);font-weight:600">AP · TS · TN · KA · KL</div>
+                </div>
+            </div>
+            <div class="contact-form" data-reveal="right">
+                <h3>📋 Request Free Quote</h3>
+                <div class="sub">We respond within 30 minutes, every day.</div>
+                <div class="form-group"><label>Full Name *</label><input type="text" id="c-name" placeholder="Your full name"/></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Phone *</label><input type="tel" id="c-phone" placeholder="+91 XXXXX XXXXX"/></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="c-email" placeholder="your@email.com"/></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Moving From *</label><input type="text" id="c-from" placeholder="City / Area"/></div>
+                    <div class="form-group"><label>Moving To *</label><input type="text" id="c-to" placeholder="City / Area"/></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Service</label><select id="c-service"><option value="">Select...</option><option>House Shifting</option><option>Car Transport</option><option>Bike Shifting</option><option>Office / Commercial</option><option>Packing & Unpacking</option><option>Loading & Unloading</option></select></div>
+                    <div class="form-group"><label>Move Date</label><input type="date" id="c-date"/></div>
+                </div>
+                <div class="form-group"><label>Additional Details</label><textarea id="c-details" rows="3" placeholder="Floor, special items, any other requirements..."></textarea></div>
+                <button class="btn btn-wa form-cta" id="contactSubmit" style="margin-top:4px; width: 100%; justify-content: center;">💬 Send via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #contact { background: var(--c-surface); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 28px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-icon-wrap {
+        width: 48px; height: 48px; border-radius: 13px;
+        background: var(--c-bg); border: 1px solid var(--c-border);
+        display: grid; place-items: center; font-size: 20px; flex-shrink: 0;
+    }
+    .contact-lbl { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--c-faint); margin-bottom: 4px; }
+    .contact-val { font-size: 16px; font-weight: 700; color: var(--c-ink); }
+    
+    .coverage-box { background: var(--c-bg); border-radius: var(--r-lg); padding: 24px; border: 1px solid var(--c-border); margin-top: 16px; }
+
+    .contact-form {
+        background: var(--c-bg); border-radius: 28px; padding: 44px;
+        border: 1px solid var(--c-border); box-shadow: var(--shadow-md);
+    }
+    .contact-form h3 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .contact-form .sub { font-size: 14px; color: var(--c-muted); margin-bottom: 30px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--c-faint); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%; padding: 11px 15px; border: 1.5px solid var(--c-border); border-radius: var(--r-md);
+        font-family: var(--f-ui); font-size: 14px; color: var(--c-ink); background: rgba(255,255,255,0.7);
+        transition: all var(--dur-fast); outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--c-brand); background: #fff; box-shadow: 0 0 0 4px rgba(10,37,64,.06); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    @media(max-width:1100px) { .contact-grid { grid-template-columns: 1fr; } }
+    @media(max-width:720px) { .form-row { grid-template-columns: 1fr; } .contact-form { padding: 24px; } }
+</style>
+
+<script>
+    document.getElementById('contactSubmit')?.addEventListener('click', () => {
+        const name = document.getElementById('c-name').value;
+        const phone = document.getElementById('c-phone').value;
+        const from = document.getElementById('c-from').value;
+        const to = document.getElementById('c-to').value;
+        const service = document.getElementById('c-service').value;
+        const date = document.getElementById('c-date').value;
+        const details = document.getElementById('c-details').value;
+
+        if (!name || !phone || !from || !to) {
+            alert('Please fill in required fields');
+            return;
+        }
+
+        const msg = `Hello PackersHub! 🚚\n\nI need a moving quote:\n👤 Name: ${name}\n📞 Phone: ${phone}\n📦 Service: ${service}\n📅 Date: ${date}\n📍 From: ${from}\n🏁 To: ${to}\n📝 Details: ${details}\n\nPlease get back to me.`;
+        window.open(`https://wa.me/917730912913?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+</script>
