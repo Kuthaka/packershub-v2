@@ -1,181 +1,198 @@
 ---
 ---
-
-<div class="quote-card">
-    <div class="quote-header">
-        <span class="emoji">🚚</span>
-        <h2>Get Instant Quote</h2>
-        <p>Tell us your move — we respond in under 30 minutes.</p>
-    </div>
-
-    <form class="quote-form">
-        <div class="form-group full">
-            <label>YOUR NAME</label>
-            <input type="text" placeholder="Enter your full name" required />
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="+91 XXXXX XXXXX" required />
-            </div>
-            <div class="form-group">
-                <label>MOVE DATE</label>
-                <input type="date" required />
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label>MOVING FROM</label>
-                <input type="text" placeholder="City / Area" required />
-            </div>
-            <div class="form-group">
-                <label>MOVING TO</label>
-                <input type="text" placeholder="City / Area" required />
-            </div>
-        </div>
-
-        <div class="form-group full">
-            <label>SERVICE TYPE</label>
-            <select required>
-                <option value="" disabled selected>Select service...</option>
-                <option value="house">House Shifting</option>
-                <option value="office">Office Shifting</option>
-                <option value="vehicle">Vehicle Transport</option>
+<section class="quote-section" id="quote">
+  <div class="container">
+    <div class="quote-card animate-fadeUp">
+      <div class="quote-card-header">
+        <div class="badge badge-gold" style="margin-bottom:16px;">⚡ Instant Quote — No Commitment</div>
+        <h2 class="quote-card-title">Get Your FREE Moving Quote in 60 Seconds</h2>
+        <p class="quote-card-sub">Tell us where you're moving — we'll give you the best price, guaranteed.</p>
+      </div>
+      <div class="quote-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Moving From *</label>
+            <select class="form-select" id="fromCity">
+              <option value="">Select City</option>
+              <optgroup label="Andhra Pradesh">
+                <option>Nellore</option><option>Vijayawada</option><option>Visakhapatnam</option>
+                <option>Guntur</option><option>Tirupati</option><option>Rajahmundry</option>
+                <option>Kakinada</option><option>Kurnool</option><option>Eluru</option>
+                <option>Ongole</option><option>Nandyal</option><option>Anantapur</option>
+                <option>Kadapa</option><option>Chittoor</option><option>Srikakulam</option>
+                <option>Vizianagaram</option><option>Bhimavaram</option><option>Machilipatnam</option>
+                <option>Tenali</option><option>Hindupur</option>
+              </optgroup>
+              <optgroup label="Telangana">
+                <option>Hyderabad</option><option>Warangal</option><option>Nizamabad</option>
+                <option>Karimnagar</option><option>Khammam</option><option>Ramagundam</option>
+                <option>Mahbubnagar</option><option>Nalgonda</option><option>Adilabad</option>
+                <option>Suryapet</option><option>Miryalaguda</option><option>Siddipet</option>
+                <option>Sangareddy</option><option>Mancherial</option>
+              </optgroup>
+              <optgroup label="Tamil Nadu">
+                <option>Chennai</option><option>Coimbatore</option><option>Madurai</option>
+                <option>Trichy</option><option>Salem</option><option>Tirunelveli</option>
+                <option>Erode</option><option>Vellore</option><option>Thoothukudi</option>
+                <option>Dindigul</option><option>Thanjavur</option><option>Ranipet</option>
+                <option>Sivakasi</option><option>Karur</option><option>Udhagamandalam</option>
+                <option>Hosur</option>
+              </optgroup>
+              <optgroup label="Karnataka">
+                <option>Bengaluru</option><option>Mysuru</option><option>Hubballi</option>
+                <option>Mangaluru</option><option>Belagavi</option><option>Kalaburagi</option>
+                <option>Ballari</option><option>Vijayapura</option><option>Shimoga</option>
+                <option>Tumkur</option><option>Davangere</option><option>Raichur</option>
+                <option>Bidar</option><option>Hassan</option><option>Udupi</option>
+              </optgroup>
+              <optgroup label="Kerala">
+                <option>Thiruvananthapuram</option><option>Kochi</option><option>Kozhikode</option>
+                <option>Thrissur</option><option>Kollam</option><option>Palakkad</option>
+                <option>Alappuzha</option><option>Kannur</option><option>Kottayam</option>
+                <option>Malappuram</option>
+              </optgroup>
             </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Moving To *</label>
+            <select class="form-select" id="toCity">
+              <option value="">Select City</option>
+              <optgroup label="Andhra Pradesh">
+                <option>Nellore</option><option>Vijayawada</option><option>Visakhapatnam</option>
+                <option>Guntur</option><option>Tirupati</option><option>Rajahmundry</option>
+              </optgroup>
+              <optgroup label="Telangana">
+                <option>Hyderabad</option><option>Warangal</option><option>Nizamabad</option>
+              </optgroup>
+              <optgroup label="Tamil Nadu">
+                <option>Chennai</option><option>Coimbatore</option><option>Madurai</option>
+              </optgroup>
+              <optgroup label="Karnataka">
+                <option>Bengaluru</option><option>Mysuru</option><option>Hubballi</option>
+              </optgroup>
+              <optgroup label="Kerala">
+                <option>Thiruvananthapuram</option><option>Kochi</option><option>Kozhikode</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Move Type *</label>
+            <select class="form-select">
+              <option value="">Select Type</option>
+              <option>Household Shifting</option>
+              <option>Office Relocation</option>
+              <option>Car Transport</option>
+              <option>Bike Transport</option>
+              <option>Warehouse Storage</option>
+              <option>International Move</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Move Date *</label>
+            <input type="date" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name *</label>
+            <input type="text" class="form-input" placeholder="Enter your full name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" />
+          </div>
         </div>
-
-        <button type="submit" class="whatsapp-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Send on WhatsApp — Free
+        <button class="btn btn-gold form-submit" id="submitQuote">
+          🚀 Get My FREE Quote — Instant Response!
         </button>
-
-        <div class="form-footer">
-            <span>🔒 No spam</span>
-            <span>⚡ 30 min reply</span>
-            <span>📦 100% Free</span>
-        </div>
-    </form>
-</div>
+        <p style="text-align:center; margin-top:16px; font-size:13px; color:var(--gray-400);">
+          🔒 100% Safe & Confidential · No spam · Free, no obligation
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
-    .quote-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-lg);
-        width: 100%;
-        max-width: 450px;
-        position: relative;
-        overflow: hidden;
-    }
+  .quote-section {
+    background: var(--gray-50);
+    padding: 100px 0;
+  }
+  .quote-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    border: 1px solid var(--gray-100);
+  }
+  .quote-card-header {
+    background: var(--gradient-hero);
+    padding: 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-card-header::after {
+    content: '📦';
+    position: absolute;
+    right: 40px;
+    bottom: -20px;
+    font-size: 120px;
+    opacity: 0.08;
+  }
+  .quote-card-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .quote-card-sub { color: rgba(255,255,255,0.65); font-size: 14px; }
 
-    .quote-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 6px;
-        background: linear-gradient(90deg, var(--color-primary), #ff9a8b);
-    }
+  .quote-form {
+    padding: 40px 48px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-600);
+    letter-spacing: 0.05em;
+  }
+  .form-input, .form-select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--gray-800);
+    background: var(--white);
+    transition: var(--transition);
+    outline: none;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(30,111,232,0.1);
+  }
+  .form-input::placeholder { color: var(--gray-400); }
 
-    .quote-header h2 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-        color: var(--color-dark);
-    }
+  .form-submit { width: 100%; padding: 18px; font-size: 16px; border-radius: 14px; cursor: pointer; border: none; }
 
-    .quote-header p {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 2rem;
-    }
-
-    .emoji {
-        font-size: 1.5rem;
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
-    .quote-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-    }
-
-    .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .form-group label {
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #999;
-        letter-spacing: 0.05em;
-    }
-
-    .form-group input, 
-    .form-group select {
-        padding: 0.85rem 1rem;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        background: #f9f9f9;
-        font-family: var(--font-sans);
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-        border-color: var(--color-secondary);
-        background: white;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 143, 132, 0.1);
-    }
-
-    .whatsapp-btn {
-        background: #009688;
-        color: white;
-        padding: 1rem;
-        border-radius: 12px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        margin-top: 0.5rem;
-        font-size: 1rem;
-    }
-
-    .whatsapp-btn:hover {
-        background: #00796b;
-        transform: translateY(-2px);
-    }
-
-    .form-footer {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.75rem;
-        color: #999;
-        margin-top: 0.5rem;
-    }
-
-    @media (max-width: 480px) {
-        .form-row {
-            grid-template-columns: 1fr;
-        }
-        .quote-card {
-            padding: 1.5rem;
-        }
-    }
+  @media (max-width: 768px) {
+    .quote-form, .quote-card-header { padding: 32px 24px; }
+    .quote-card-title { font-size: 1.5rem; }
+  }
 </style>
+
+<script>
+  const submitBtn = document.getElementById('submitQuote');
+  submitBtn?.addEventListener('click', () => {
+    alert('Thank you! Our expert will call you within 15 minutes with your custom quote.');
+  });
+</script>

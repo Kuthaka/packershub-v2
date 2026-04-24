@@ -1,67 +1,113 @@
 ---
 ---
-<section id="process" class="noise">
-    <div class="process-bg"></div>
-    <div class="wrap">
-        <div class="s-head" data-reveal="up" style="color:#fff;margin-bottom:56px">
-            <span class="t-sm" style="color:rgba(255,255,255,.4)">How We Work</span>
-            <h2 class="t-h2" style="color:#fff;margin-top:14px;margin-bottom:16px">Simple. Transparent.<br/><em>Stress-Free.</em></h2>
-            <p class="t-body" style="color:rgba(255,255,255,.55)">Four clear steps from your first call to the last box placed in your new home.</p>
-        </div>
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-header center animate-fadeUp">
+      <div class="section-tag">How It Works</div>
+      <h2 class="heading-lg">Your Move in <span class="text-gradient-gold">5 Simple Steps</span></h2>
+      <p style="color:var(--gray-600); max-width:520px; margin:16px auto 0;">
+        We've streamlined relocation into a seamless 5-step journey so you can sit back and relax while we handle everything.
+      </p>
     </div>
-    <div class="process-grid">
-        <div class="process-step" data-reveal="up" style="transition-delay:60ms">
-            <div class="step-num">01</div>
-            <span class="step-icon">📞</span>
-            <span class="step-label">Step One</span>
-            <div class="step-title">Contact Us</div>
-            <div class="step-desc">Call, WhatsApp, or fill our form. We respond in under 30 minutes with a clear plan for your move.</div>
-        </div>
-        <div class="process-step" data-reveal="up" style="transition-delay:130ms">
-            <div class="step-num">02</div>
-            <span class="step-icon">📋</span>
-            <span class="step-label">Step Two</span>
-            <div class="step-title">Free Survey</div>
-            <div class="step-desc">We do a video or on-site survey and give you a detailed written quote — fixed price, no additions at delivery.</div>
-        </div>
-        <div class="process-step" data-reveal="up" style="transition-delay:200ms">
-            <div class="step-num">03</div>
-            <span class="step-icon">📦</span>
-            <span class="step-label">Step Three</span>
-            <div class="step-title">Expert Packing</div>
-            <div class="step-desc">Our trained crew packs everything with premium materials. Every item labelled, inventoried, handled with care.</div>
-        </div>
-        <div class="process-step" data-reveal="up" style="transition-delay:280ms">
-            <div class="step-num">04</div>
-            <span class="step-icon">🏡</span>
-            <span class="step-label">Step Four</span>
-            <div class="step-title">Safe Delivery</div>
-            <div class="step-desc">GPS-tracked delivery to your new home. Unpacking, arrangement, and complete satisfaction — guaranteed.</div>
-        </div>
+
+    <div class="process-steps">
+      <div class="process-step animate-fadeUp">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">📞 Call / Request Quote</div>
+        <p class="process-step-desc">Call us or fill the online form. Our expert estimates your move in minutes.</p>
+      </div>
+      <div class="process-step animate-fadeUp" style="animation-delay: 0.1s;">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">🔍 Free Survey</div>
+        <p class="process-step-desc">Our team visits your home for a detailed survey and gives you a fixed, transparent quote.</p>
+      </div>
+      <div class="process-step animate-fadeUp" style="animation-delay: 0.2s;">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">📦 Professional Packing</div>
+        <p class="process-step-desc">Our trained crew packs every item using premium materials — methodically, safely, efficiently.</p>
+      </div>
+      <div class="process-step animate-fadeUp" style="animation-delay: 0.3s;">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">🚛 Safe Transit</div>
+        <p class="process-step-desc">GPS-tracked vehicles, insured cargo, and real-time updates every step of the journey.</p>
+      </div>
+      <div class="process-step animate-fadeUp" style="animation-delay: 0.4s;">
+        <div class="process-step-num">05</div>
+        <div class="process-step-title">🏠 Delivered & Settled</div>
+        <p class="process-step-desc">We unload, unpack, and arrange your home. Move complete — you just walk in and live.</p>
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
-    #process { background: var(--c-brand); position: relative; overflow: hidden; padding-bottom: 0; }
-    .process-bg {
-        position: absolute; inset: 0;
-        background: radial-gradient(ellipse 80% 60% at 0% 50%, rgba(22,58,96,.6) 0%, transparent 60%),
-                    radial-gradient(ellipse 60% 80% at 100% 50%, rgba(232,79,47,.08) 0%, transparent 60%);
-    }
-    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.1); }
-    .process-step {
-        padding: 60px 40px; border-right: 1px solid rgba(255,255,255,.06);
-        position: relative; transition: background var(--dur-base);
-    }
-    .process-step:last-child { border-right: none; }
-    .process-step:hover { background: rgba(255,255,255,.04); }
-    
-    .step-num { font-family: var(--f-display); font-size: 72px; font-weight: 900; color: rgba(255,255,255,.06); line-height: 1; position: absolute; top: 24px; right: 24px; }
-    .step-icon { font-size: 36px; margin-bottom: 20px; display: block; }
-    .step-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .14em; color: rgba(255,255,255,.35); text-transform: uppercase; margin-bottom: 10px; display: block; }
-    .step-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-    .step-desc { font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.65; }
+  .process { background: var(--white); padding: 100px 0; }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 60px;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue-300), var(--gold), var(--blue-300), transparent);
+    z-index: 0;
+  }
+  .process-step {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .process-step-num {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--blue-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--blue-700);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    position: relative;
+  }
+  .process-step:hover .process-step-num {
+    background: var(--gradient-hero);
+    color: var(--gold);
+    border-color: transparent;
+    transform: scale(1.1);
+  }
+  .process-step-title {
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 8px;
+  }
+  .process-step-desc {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
 
-    @media(max-width:1100px) { .process-grid { grid-template-columns: repeat(2,1fr); } }
-    @media(max-width:720px) { .process-grid { grid-template-columns: 1fr; } .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); } }
+  @media (max-width: 1024px) {
+    .process-steps { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 768px) {
+    .process { padding: 60px 0; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step { margin-bottom: 32px; }
+  }
 </style>

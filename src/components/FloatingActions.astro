@@ -1,38 +1,86 @@
 ---
 ---
-<div class="float-actions">
-    <a class="float-btn float-wa" href="https://wa.me/917730912913?text=Hello! I need a moving quote from PackersHub." target="_blank" rel="noopener">
-        <span class="fb-icon">💬</span>
-        <span class="fb-text">WhatsApp Us</span>
-    </a>
-    <a class="float-btn float-call" href="tel:+917730912913">
-        <span class="fb-icon">📞</span>
-        <span class="fb-text">Call Now</span>
-    </a>
+<div class="float-btns">
+  <a href="https://wa.me/917730912913" class="float-btn float-btn-wa" target="_blank" rel="noopener">
+    <span class="float-icon">💬</span>
+    <span class="float-btn-tooltip">Chat on WhatsApp</span>
+  </a>
+  <a href="tel:+917730912913" class="float-btn float-btn-call">
+    <span class="float-icon">📞</span>
+    <span class="float-btn-tooltip">Call: +91 77309 12913</span>
+  </a>
+  <button id="btt" class="float-btn btt">
+    <span class="float-icon">↑</span>
+    <span class="float-btn-tooltip">Back to Top</span>
+  </button>
 </div>
 
 <style>
-    .float-actions {
-        position: fixed; bottom: 28px; right: 28px; z-index: 999;
-        display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
-    }
-    .float-btn {
-        display: flex; align-items: center; gap: 10px;
-        padding: 14px 20px; border-radius: var(--r-full);
-        font-size: 13.5px; font-weight: 700; color: #fff;
-        box-shadow: var(--shadow-lg);
-        transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
-        cursor: pointer; text-decoration: none;
-    }
-    .float-btn:hover { transform: translateX(-4px); box-shadow: var(--shadow-xl); }
-    .float-wa { background: #25D366; }
-    .float-call { background: var(--c-brand); }
-    .float-btn .fb-icon { font-size: 20px; flex-shrink: 0; }
-    .float-btn .fb-text { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .4s var(--ease-out); }
-    .float-btn:hover .fb-text { max-width: 160px; }
+  .float-btns {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2000;
+  }
+  .float-btn {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: var(--transition);
+    position: relative;
+    border: none;
+    cursor: pointer;
+  }
+  .float-btn:hover { transform: scale(1.1) translateY(-5px); }
+  .float-btn-wa { background: #25D366; }
+  .float-btn-call { background: var(--blue-600); }
+  .btt { background: var(--blue-900); border: 1px solid rgba(255,255,255,0.1); opacity: 0; pointer-events: none; }
+  .btt.show { opacity: 1; pointer-events: all; }
 
-    @media(max-width:720px) {
-        .float-actions { bottom: 16px; right: 16px; }
-        .fb-text { display: none; }
-    }
+  .float-btn-tooltip {
+    position: absolute;
+    right: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: var(--blue-900);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .float-btn:hover .float-btn-tooltip { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
+
+  @media (max-width: 768px) {
+    .float-btns { bottom: 20px; right: 20px; }
+    .float-btn { width: 50px; height: 50px; font-size: 20px; }
+    .float-btn-tooltip { display: none; }
+  }
 </style>
+
+<script>
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      btt?.classList.add('show');
+    } else {
+      btt?.classList.remove('show');
+    }
+  });
+  btt?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
