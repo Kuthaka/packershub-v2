@@ -134,6 +134,13 @@
       padding: 0 8px;
     }
 
+    /* Center last item if alone */
+    .process-step:last-child:nth-child(odd) {
+      grid-column: 1 / span 2;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+
     /* Horizontal connection to spine */
     .process-step::after {
       content: '';

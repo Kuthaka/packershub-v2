@@ -205,5 +205,36 @@
     .why-us { padding: 60px 0; }
     .why-main-card { padding: 32px 24px; }
     .why-badge-float { position: static; margin-top: 24px; width: fit-content; }
+
+    .why-features { 
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .why-feature {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 24px 16px;
+      gap: 16px;
+      transform: none !important;
+    }
+    .why-feature:last-child:nth-child(odd) {
+      grid-column: 1 / span 2;
+      width: 80%;
+      margin: 0 auto;
+    }
+    .why-feature-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+    }
+    .why-feature-title {
+      font-size: 0.95rem;
+    }
+    .why-feature-desc {
+      font-size: 12px;
+    }
   }
 </style>
