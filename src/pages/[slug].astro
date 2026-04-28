@@ -11,6 +11,8 @@ import Footer from '../components/Footer.astro';
 import FloatingActions from '../components/FloatingActions.astro';
 import { locations } from '../data/locations';
 import { stateData } from '../data/states';
+import { cityAPData } from '../data/city-ap';
+import type { StateContent, CityContent } from '../data/types';
 
 export async function getStaticPaths() {
   return locations.map((loc) => ({
@@ -21,7 +23,14 @@ export async function getStaticPaths() {
 
 const { location } = Astro.props;
 const isState = location.type === 'state';
-const content = isState ? stateData[location.slug] : null;
+
+// Combine all city data sources (currently only city-ap.ts)
+const allCityData = { ...cityAPData };
+const content = isState ? stateData[location.slug] : allCityData[location.slug];
+
+// Type-safe access
+const stateContent = isState ? content as StateContent : null;
+const cityContent = !isState ? content as CityContent : null;
 
 // Filter cities if it's a state page
 const stateCities = isState 
@@ -29,7 +38,7 @@ const stateCities = isState
   : [];
 
 const title = content?.metaTitle || `Packers and Movers in ${location.name} | ${location.tagline} | PackersHub`;
-const description = content?.metaDescription || `Looking for the best packers and movers in ${location.name}? PackersHub offers professional ${location.tagline} relocation services with 100% safety and transparency.`;
+const description = content?.metaDescription || `Looking for the best packers and movers in ${location.name}? PackersHub offers professional ${location.tagline} relocation services in ${location.name} with 100% safety and transparency.`;
 ---
 
 <Layout title={title} description={description}>
@@ -46,8 +55,8 @@ const description = content?.metaDescription || `Looking for the best packers an
           <h1>
             {content ? content.title : `Best Packers and Movers in ${location.name}`}
           </h1>
-          {isState ? (
-             <p class="intro-text">{content?.introduction}</p>
+          {content ? (
+             <p class="intro-text">{content.introduction}</p>
           ) : (
             <>
               <p class="tagline">{location.tagline}</p>
@@ -68,15 +77,16 @@ const description = content?.metaDescription || `Looking for the best packers an
 
     <QuoteForm />
     
-    {isState && content && (
+    {isState && stateContent && (
       <>
+        <!-- State sections (already implemented) -->
         <section class="state-services section">
           <div class="container">
             <div class="section-header text-center animate-fadeUp">
-              <h2 class="heading-lg">{content.services.title}</h2>
+              <h2 class="heading-lg">{stateContent.services.title}</h2>
             </div>
             <div class="services-rich-grid">
-              {content.services.items.map(item => {
+              {stateContent.services.items.map(item => {
                 const [title, desc] = item.split(': ');
                 return (
                   <div class="service-rich-card animate-fadeUp">
@@ -93,11 +103,11 @@ const description = content?.metaDescription || `Looking for the best packers an
           <div class="container">
             <div class="why-grid">
               <div class="why-content animate-fadeUp">
-                <h2 class="heading-lg">{content.whyUs.title}</h2>
-                <p>{content.whyUs.content}</p>
+                <h2 class="heading-lg">{stateContent.whyUs.title}</h2>
+                <p>{stateContent.whyUs.content}</p>
                 <div class="fact-box">
                   <span class="fact-icon">ℹ️</span>
-                  <p>{content.whyUs.fact}</p>
+                  <p>{stateContent.whyUs.fact}</p>
                 </div>
               </div>
             </div>
@@ -107,10 +117,10 @@ const description = content?.metaDescription || `Looking for the best packers an
         <section class="process-state section">
           <div class="container">
             <div class="section-header text-center animate-fadeUp">
-              <h2 class="heading-lg">{content.process.title}</h2>
+              <h2 class="heading-lg">{stateContent.process.title}</h2>
             </div>
             <div class="process-steps">
-              {content.process.steps.map(step => (
+              {stateContent.process.steps.map(step => (
                 <div class="step-card animate-fadeUp">
                   <div class="step-number">{step.step.split(' ')[1]}</div>
                   <h4>{step.step.split(' — ')[1]}</h4>
@@ -147,7 +157,7 @@ const description = content?.metaDescription || `Looking for the best packers an
               <h2 class="heading-lg">Frequently Asked Questions</h2>
             </div>
             <div class="faq-list">
-              {content.faqs.map(faq => (
+              {stateContent.faqs.map(faq => (
                 <div class="faq-item animate-fadeUp">
                   <h4>{faq.q}</h4>
                   <p>{faq.a}</p>
@@ -159,7 +169,109 @@ const description = content?.metaDescription || `Looking for the best packers an
       </>
     )}
 
-    {!isState && (
+    {!isState && cityContent && (
+      <>
+        <section class="city-info-section section">
+          <div class="container">
+            <div class="city-info-grid">
+              <div class="info-card animate-fadeUp">
+                <h3>City Statistics</h3>
+                <ul>
+                  <li><strong>District:</strong> {cityContent.cityInfo.district}</li>
+                  <li><strong>Population:</strong> {cityContent.cityInfo.population}</li>
+                </ul>
+              </div>
+              <div class="info-card animate-fadeUp">
+                <h3>Key Landmarks</h3>
+                <div class="landmark-tags">
+                  {cityContent.cityInfo.landmarks.map((l: string) => <span class="tag">{l}</span>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="local-context section bg-light">
+          <div class="container">
+            <div class="section-header animate-fadeUp">
+              <h2 class="heading-lg">{cityContent.localContext.title}</h2>
+              <p>{cityContent.localContext.description}</p>
+            </div>
+            <div class="common-moves-grid">
+              {cityContent.localContext.commonMoves.map((move: string) => (
+                <div class="move-item animate-fadeUp">
+                  <span class="check">✓</span>
+                  <p>{move}</p>
+                </div>
+              ))}
+            </div>
+            <div class="active-areas animate-fadeUp">
+              <h4>Active Neighborhoods</h4>
+              <p>{cityContent.localContext.activeAreas}</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="pricing-section section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">{cityContent.pricingGuide.title}</h2>
+            </div>
+            <div class="pricing-grid">
+              <div class="price-box animate-fadeUp">
+                <h4>Local Shifting</h4>
+                <div class="price">{cityContent.pricingGuide.typicalCosts.local}</div>
+              </div>
+              <div class="price-box animate-fadeUp">
+                <h4>Long Distance</h4>
+                <div class="price">{cityContent.pricingGuide.typicalCosts.longDistance}</div>
+              </div>
+            </div>
+            <div class="pricing-details animate-fadeUp">
+              <p><strong>Note:</strong> {cityContent.pricingGuide.note}</p>
+              <p><strong>Vehicles:</strong> {cityContent.pricingGuide.vehicleTransport}</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="state-services section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">{cityContent.services.title}</h2>
+            </div>
+            <div class="services-rich-grid">
+              {cityContent.services.items.map(item => {
+                const [title, desc] = item.split(': ');
+                return (
+                  <div class="service-rich-card animate-fadeUp">
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-state section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">FAQs for {location.name}</h2>
+            </div>
+            <div class="faq-list">
+              {cityContent.faqs.map(faq => (
+                <div class="faq-item animate-fadeUp">
+                  <h4>{faq.q}</h4>
+                  <p>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )}
+
+    {!content && (
       <>
         <Services />
         <Process />
@@ -413,6 +525,122 @@ const description = content?.metaDescription || `Looking for the best packers an
   .city-card:hover .arrow {
     opacity: 1;
     transform: translateX(5px);
+  }
+
+  /* City Specific Styles */
+  .city-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  .info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .info-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--primary);
+    font-family: var(--font-display);
+  }
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .info-card li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+  .landmark-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .bg-light { background: var(--bg-section); }
+  
+  .common-moves-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+  }
+  .move-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .move-item .check {
+    color: var(--success);
+    font-weight: bold;
+  }
+  .active-areas {
+    margin-top: 30px;
+    padding: 24px;
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .active-areas h4 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+  .price-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: var(--transition);
+  }
+  .price-box:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+  }
+  .price-box h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+  .price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .pricing-details {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   @media (max-width: 768px) {

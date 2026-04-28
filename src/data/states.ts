@@ -1,28 +1,4 @@
-export interface StateContent {
-  slug: string;
-  metaTitle: string;
-  metaDescription: string;
-  title: string;
-  introduction: string;
-  services: {
-    title: string;
-    items: string[];
-  };
-  whyUs: {
-    title: string;
-    content: string;
-    fact: string;
-  };
-  process: {
-    title: string;
-    steps: { step: string; text: string }[];
-  };
-  faqs: { q: string; a: string }[];
-  cta: {
-    phone: string;
-    whatsapp: string;
-  };
-}
+import type { StateContent } from './types';
 
 export const stateData: Record<string, StateContent> = {
   "packers-movers-andhra-pradesh": {
