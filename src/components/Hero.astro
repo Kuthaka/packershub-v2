@@ -14,6 +14,8 @@
         </h1>
         <p>IBA Approved movers serving 75+ cities across AP, TS, TN, KA & Kerala. Professional household shifting, office relocation, and vehicle transport with zero damage guarantee.</p>
         
+        <img src="/images/main.jpg" alt="PackersHub Professional Movers" class="hero-mobile-img" />
+        
         <div class="city-cta">
           <a href="tel:+917731074075" class="btn btn-primary btn-lg">📞 Get FREE Quote</a>
           <a href="https://wa.me/917731074075" class="btn btn-accent btn-lg" target="_blank">💬 WhatsApp</a>
@@ -98,8 +100,10 @@
 
 <style>
   .city-hero {
-    background: linear-gradient(135deg, #EEF3FF 0%, #F4F7FE 60%, #FFFBF5 100%);
-    padding: 100px 0 80px;
+    background: linear-gradient(rgba(238, 243, 255, 0.6), rgba(244, 247, 254, 0.6)), url('/images/main.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    padding: 40px 0 100px;
     position: relative;
     overflow: hidden;
   }
@@ -160,6 +164,17 @@
     margin-bottom: 40px;
   }
   
+  .hero-mobile-img {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: 0 auto 30px;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid #fff;
+  }
+
   .trust-pills {
     display: flex;
     gap: 16px;
@@ -252,9 +267,14 @@
   }
 
   @media (max-width: 992px) {
+    .city-hero { 
+      background: linear-gradient(135deg, #EEF3FF 0%, #F4F7FE 60%, #FFFBF5 100%); 
+      padding: 60px 0; 
+      text-align: center; 
+    }
     .city-hero-grid { grid-template-columns: 1fr; gap: 48px; }
-    .city-hero { padding: 60px 0; text-align: center; }
-    .city-hero p { margin: 0 auto 40px; }
+    .city-hero p { margin: 0 auto 30px; }
+    .hero-mobile-img { display: block; }
     .city-cta, .trust-pills { justify-content: center; }
     .quote-card { max-width: 480px; margin: 0 auto; }
   }
