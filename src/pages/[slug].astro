@@ -10,6 +10,7 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 import FloatingActions from '../components/FloatingActions.astro';
 import { locations } from '../data/locations';
+import { stateData } from '../data/states';
 
 export async function getStaticPaths() {
   return locations.map((loc) => ({
@@ -20,14 +21,15 @@ export async function getStaticPaths() {
 
 const { location } = Astro.props;
 const isState = location.type === 'state';
+const content = isState ? stateData[location.slug] : null;
 
 // Filter cities if it's a state page
 const stateCities = isState 
   ? locations.filter(l => l.type === 'city' && l.state === location.name)
   : [];
 
-const title = `Packers and Movers in ${location.name} | ${location.tagline} | PackersHub`;
-const description = `Looking for the best packers and movers in ${location.name}? PackersHub offers professional ${location.tagline} relocation services with 100% safety and transparency.`;
+const title = content?.metaTitle || `Packers and Movers in ${location.name} | ${location.tagline} | PackersHub`;
+const description = content?.metaDescription || `Looking for the best packers and movers in ${location.name}? PackersHub offers professional ${location.tagline} relocation services with 100% safety and transparency.`;
 ---
 
 <Layout title={title} description={description}>
@@ -42,17 +44,23 @@ const description = `Looking for the best packers and movers in ${location.name}
             Professional Movers in {location.name}
           </div>
           <h1>
-            Best Packers and Movers in <span class="text-gradient-primary">{location.name}</span>
+            {content ? content.title : `Best Packers and Movers in ${location.name}`}
           </h1>
-          <p class="tagline">{location.tagline}</p>
-          <p class="description">
-            Experience world-class relocation services in {location.name}. Whether it's household shifting, 
-            office moving, or vehicle transport, PackersHub ensures a stress-free experience 
-            with our {isState ? 'state-wide' : 'city-wide'} network.
-          </p>
+          {isState ? (
+             <p class="intro-text">{content?.introduction}</p>
+          ) : (
+            <>
+              <p class="tagline">{location.tagline}</p>
+              <p class="description">
+                Experience world-class relocation services in {location.name}. Whether it's household shifting, 
+                office moving, or vehicle transport, PackersHub ensures a stress-free experience 
+                with our city-wide network.
+              </p>
+            </>
+          )}
           <div class="loc-cta">
             <a href="#quote" class="btn btn-primary btn-lg">Get Free Quote</a>
-            <a href="tel:+917731074075" class="btn btn-outline btn-lg">Call Expert</a>
+            <a href={`tel:${content?.cta.phone || '+917731074075'}`} class="btn btn-outline btn-lg">Call Expert</a>
           </div>
         </div>
       </div>
@@ -60,38 +68,241 @@ const description = `Looking for the best packers and movers in ${location.name}
 
     <QuoteForm />
     
-    {isState && (
-      <section class="cities-section section">
-        <div class="container">
-          <div class="section-header text-center animate-fadeUp">
-            <h2 class="heading-lg">Cities we serve in <span class="text-gradient-primary">{location.name}</span></h2>
-            <p>Providing professional moving services across all major hubs in the state.</p>
+    {isState && content && (
+      <>
+        <section class="state-services section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">{content.services.title}</h2>
+            </div>
+            <div class="services-rich-grid">
+              {content.services.items.map(item => {
+                const [title, desc] = item.split(': ');
+                return (
+                  <div class="service-rich-card animate-fadeUp">
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div class="city-grid">
-            {stateCities.map(city => (
-              <a href={`/${city.slug}/`} class="city-card animate-fadeUp">
-                <div class="city-info">
-                  <span class="city-name">{city.name}</span>
-                  <span class="city-tag">{city.tagline}</span>
+        </section>
+
+        <section class="why-state section">
+          <div class="container">
+            <div class="why-grid">
+              <div class="why-content animate-fadeUp">
+                <h2 class="heading-lg">{content.whyUs.title}</h2>
+                <p>{content.whyUs.content}</p>
+                <div class="fact-box">
+                  <span class="fact-icon">ℹ️</span>
+                  <p>{content.whyUs.fact}</p>
                 </div>
-                <span class="arrow">→</span>
-              </a>
-            ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section class="process-state section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">{content.process.title}</h2>
+            </div>
+            <div class="process-steps">
+              {content.process.steps.map(step => (
+                <div class="step-card animate-fadeUp">
+                  <div class="step-number">{step.step.split(' ')[1]}</div>
+                  <h4>{step.step.split(' — ')[1]}</h4>
+                  <p>{step.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="cities-section section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">Cities we serve in <span class="text-gradient-primary">{location.name}</span></h2>
+              <p>Providing professional moving services across all major hubs in the state.</p>
+            </div>
+            <div class="city-grid">
+              {stateCities.map(city => (
+                <a href={`/${city.slug}/`} class="city-card animate-fadeUp">
+                  <div class="city-info">
+                    <span class="city-name">{city.name}</span>
+                    <span class="city-tag">{city.tagline}</span>
+                  </div>
+                  <span class="arrow">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-state section">
+          <div class="container">
+            <div class="section-header text-center animate-fadeUp">
+              <h2 class="heading-lg">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+              {content.faqs.map(faq => (
+                <div class="faq-item animate-fadeUp">
+                  <h4>{faq.q}</h4>
+                  <p>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
     )}
 
-    <Services />
-    <Process />
-    <WhyUs />
-    <FAQ />
+    {!isState && (
+      <>
+        <Services />
+        <Process />
+        <WhyUs />
+        <FAQ />
+      </>
+    )}
   </main>
   <Footer />
   <FloatingActions />
 </Layout>
 
 <style>
+  .intro-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Rich Services Grid */
+  .services-rich-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .service-rich-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    text-align: left;
+  }
+  .service-rich-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+  .service-rich-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--primary);
+    font-family: var(--font-display);
+  }
+  .service-rich-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Fact Box */
+  .fact-box {
+    margin-top: 30px;
+    padding: 24px;
+    background: var(--primary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    border-left: 4px solid var(--primary);
+    text-align: left;
+  }
+  .fact-icon { font-size: 24px; }
+  .fact-box p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+  }
+
+  /* Process Steps */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .step-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    border: 1px solid var(--border);
+    text-align: left;
+  }
+  .step-number {
+    width: 40px; height: 40px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .step-card h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+  }
+  .step-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* FAQ List */
+  .faq-list {
+    max-width: 800px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+  }
+  .faq-item {
+    background: #fff;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+  }
+  .faq-item h4 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+  }
+  .faq-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
   .loc-hero {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, var(--primary-light) 0%, #fff 100%);
