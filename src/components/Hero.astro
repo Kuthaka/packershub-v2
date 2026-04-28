@@ -55,6 +55,30 @@
             </div>
             <div class="form-row">
               <div class="form-group">
+                <label>Moving Floor From</label>
+                <select name="floor_from" required>
+                  <option>Ground Floor</option>
+                  <option>1st Floor</option>
+                  <option>2nd Floor</option>
+                  <option>3rd Floor</option>
+                  <option>4th Floor</option>
+                  <option>5th+ Floor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Moving Floor To</label>
+                <select name="floor_to" required>
+                  <option>Ground Floor</option>
+                  <option>1st Floor</option>
+                  <option>2nd Floor</option>
+                  <option>3rd Floor</option>
+                  <option>4th Floor</option>
+                  <option>5th+ Floor</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
                 <label>Your Name</label>
                 <input type="text" name="name" placeholder="Full Name" required>
               </div>
@@ -244,7 +268,7 @@
   const form = document.getElementById('heroQuoteForm');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = form.querySelector('.submit-btn');
+    const btn = form.querySelector('.submit-btn') as HTMLElement;
     if (btn) {
       const originalText = btn.innerHTML;
       btn.innerHTML = '✅ Quote Sent! Redirecting...';
