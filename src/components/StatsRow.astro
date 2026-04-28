@@ -1,0 +1,74 @@
+---
+---
+<div class="stats-row animate-fadeUp">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-it">
+        <div class="stat-n">50k+</div>
+        <div class="stat-l">Moves Completed</div>
+      </div>
+      <div class="stat-it">
+        <div class="stat-n">4.9★</div>
+        <div class="stat-l">Google Rating</div>
+      </div>
+      <div class="stat-it">
+        <div class="stat-n">15+</div>
+        <div class="stat-l">Years Experience</div>
+      </div>
+      <div class="stat-it">
+        <div class="stat-n">75+</div>
+        <div class="stat-l">Cities Served</div>
+      </div>
+      <div class="stat-it">
+        <div class="stat-n">0%</div>
+        <div class="stat-l">Damage Rate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .stats-row {
+    background: var(--primary-dark);
+    padding: 32px 0;
+    position: relative;
+    z-index: 20;
+  }
+  .stats-inner {
+    display: flex;
+    justify-content: space-around;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .stat-it {
+    text-align: center;
+    color: #fff;
+  }
+  .stat-n {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-l {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 768px) {
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .stats-row { padding: 40px 0; }
+  }
+  @media (max-width: 480px) {
+    .stat-n { font-size: 24px; }
+  }
+</style>

@@ -1,58 +1,50 @@
 ---
 ---
-<div class="cta-band animate-fadeUp">
+<section class="cta-banner">
   <div class="container">
-    <div class="cta-band-inner">
-      <div class="cta-band-text">
-        <h2 class="cta-band-title">Ready to Move? <br/>Let's Make It Happen.</h2>
-        <p class="cta-band-sub">Join 50,000+ families who moved smart with PackersHub. Your stress-free move starts with one call.</p>
-      </div>
-      <div class="cta-band-actions">
-        <a href="tel:+917731074075" class="btn" style="background:var(--blue-900); color:white; font-size:16px; padding:18px 36px;">
-          📞 Call +91 77310 74075
-        </a>
-        <a href="https://wa.me/917731074075" class="btn" style="background:rgba(10,22,40,0.15); color:var(--blue-900); border:2px solid rgba(10,22,40,0.3); font-size:16px; padding:18px 36px;">
-          💬 WhatsApp Us
-        </a>
+    <div class="cta-inner animate-fadeUp">
+      <h2>Experience a Stress-Free Move Today</h2>
+      <p>Join 50,000+ happy families who moved with PackersHub. Get your free, no-obligation quote in 60 seconds.</p>
+      <div class="cta-btns">
+        <a href="tel:+917731074075" class="btn btn-primary btn-lg">📞 Call +91 77310 74075</a>
+        <a href="https://wa.me/917731074075" class="btn btn-accent btn-lg" target="_blank">💬 WhatsApp Now</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
-  .cta-band {
-    background: var(--gradient-gold);
-    padding: 60px 0;
-    position: relative;
-    z-index: 10;
+  .cta-banner { padding: 80px 0; background: #fff; }
+  .cta-inner {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #1e1b4b 100%);
+    border-radius: var(--radius-xl);
+    padding: 64px 40px;
+    text-align: center;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
   }
-  .cta-band-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-  .cta-band-title {
+  .cta-inner h2 {
     font-family: var(--font-display);
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--blue-900);
-    line-height: 1.1;
-    margin-bottom: 12px;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
   }
-  .cta-band-sub {
-    font-size: 16px;
-    color: rgba(10,22,40,0.7);
-    max-width: 500px;
+  .cta-inner p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto 32px;
   }
-  .cta-band-actions {
+  .cta-btns {
     display: flex;
+    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
   }
 
-  @media (max-width: 1024px) {
-    .cta-band-inner { flex-direction: column; text-align: center; }
-    .cta-band-actions { justify-content: center; }
+  @media (max-width: 600px) {
+    .cta-inner { padding: 48px 24px; }
+    .cta-btns .btn { width: 100%; justify-content: center; }
   }
 </style>

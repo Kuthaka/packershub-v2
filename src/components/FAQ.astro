@@ -1,70 +1,57 @@
 ---
 ---
-<section class="section faq" id="faq">
+<section class="faq-section" id="faq">
   <div class="container">
-    <div class="section-header center animate-fadeUp">
-      <div class="section-tag">FAQ</div>
-      <h2 class="heading-lg">Answers to Your <span class="text-gradient-gold">Moving Questions</span></h2>
+    <div class="section-header animate-fadeUp">
+      <div class="chip">❓ Common Questions</div>
+      <h2>Answers to Your Moving Questions</h2>
+      <p>Everything you need to know about your next move with PackersHub.</p>
     </div>
 
-    <div class="faq-grid animate-fadeUp" id="faqGrid">
+    <div class="faq-accordion animate-fadeUp">
       <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">How much do packers and movers cost in South India?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
+        <button class="faq-btn">
+          <span>How much do packers and movers cost in South India?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
           <p>Local moves start from ₹3,999 and intercity relocations begin at ₹7,999. The final price depends on distance, volume of goods, services selected, and floor access. We always provide a fixed, transparent quote after a free survey — no hidden fees ever.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">Is PackersHub IBA approved and government verified?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
+        <button class="faq-btn">
+          <span>Is PackersHub IBA approved and government verified?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
           <p>Yes! PackersHub is a fully IBA-approved moving company and is government-registered. All our staff are police-verified and we carry all required licenses and permits to operate across South India.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">Do you provide insurance for goods during transit?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Absolutely. All our moves come with transit insurance. Our Starter plan includes ₹2 lakh coverage, Standard includes ₹5 lakh, and Premium offers up to ₹20 lakh coverage. Additional insurance can be purchased for high-value items.</p>
+        <button class="faq-btn">
+          <span>Do you provide insurance for goods during transit?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p>Absolutely. All our moves come with transit insurance coverage up to ₹20 lakh depending on the plan. Additional insurance can be purchased for high-value items.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">How far in advance should I book my move?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>We recommend booking at least 7-10 days in advance for intercity moves and 3-5 days for local moves. However, we also offer emergency 24-hour moving services for urgent relocations — just call us!</p>
+        <button class="faq-btn">
+          <span>How far in advance should I book my move?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p>We recommend booking at least 7-10 days in advance for intercity moves and 3-5 days for local moves. However, we also offer emergency 24-hour moving services for urgent relocations.</p>
         </div>
       </div>
-
       <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">Can you transport my car along with household goods?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! We have specialized enclosed car carriers for safe vehicle transport. You can book car transport separately or bundle it with your household move for a discounted combined rate. GPS tracking is included.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span class="faq-question-text">What happens if my goods are damaged during the move?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          <p>PackersHub offers a 100% Damage-Free Guarantee. If any item is damaged due to our handling, we replace or compensate for it — no questions asked. File a claim within 48 hours of delivery and we resolve within 7 business days.</p>
+        <button class="faq-btn">
+          <span>What happens if my goods are damaged during the move?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-content">
+          <p>PackersHub offers a 100% Damage-Free Guarantee. If any item is damaged due to our handling, we replace or compensate for it — no questions asked.</p>
         </div>
       </div>
     </div>
@@ -72,62 +59,67 @@
 </section>
 
 <style>
-  .faq { background: var(--white); padding: 100px 0; }
-  .faq-grid { max-width: 900px; margin: 60px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .faq-section { padding: 80px 0; background: var(--bg); }
+  .faq-accordion { max-width: 800px; margin: 40px auto 0; }
   .faq-item {
-    background: var(--white);
-    border: 1.5px solid var(--gray-100);
-    border-radius: 16px;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 12px;
     overflow: hidden;
-    transition: var(--transition);
   }
-  .faq-item.open { border-color: var(--blue-300); box-shadow: var(--shadow-card); }
-  .faq-question {
+  .faq-btn {
+    width: 100%;
     padding: 24px 32px;
-    cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    background: var(--white);
-    transition: 0.3s;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
   }
-  .faq-question:hover { background: var(--gray-50); }
-  .faq-question-text { font-family: var(--font-ui); font-weight: 700; color: var(--gray-800); font-size: 1.05rem; }
-  .faq-toggle {
-    width: 32px; height: 32px;
-    background: var(--gray-100);
+  .faq-icon {
+    width: 28px; height: 28px;
+    background: var(--bg-section);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px; font-weight: 400; color: var(--gray-600);
-    transition: 0.4s;
+    font-size: 20px; transition: all 0.3s;
   }
-  .faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--blue-600); color: var(--white); }
-  
-  .faq-answer {
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background: var(--primary);
+    color: #fff;
+  }
+  .faq-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    background: var(--white);
+    transition: all 0.4s;
+    background: #fff;
   }
-  .faq-item.open .faq-answer { max-height: 1000px; transition: max-height 1s ease-in; }
-  .faq-answer p { padding: 0 32px 32px; font-size: 15px; color: var(--gray-600); line-height: 1.7; }
+  .faq-item.active .faq-content { max-height: 500px; border-top: 1px solid var(--border); }
+  .faq-content p { padding: 24px 32px; font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
 
-  @media (max-width: 900px) {
-    .faq-grid { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    .faq-btn { padding: 20px 24px; font-size: 15px; }
+    .faq-content p { padding: 20px 24px; }
   }
 </style>
 
 <script>
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isOpen = item?.classList.contains('open');
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isActive = item?.classList.contains('active');
       
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
       
-      if (!isOpen) {
-        item?.classList.add('open');
+      if (!isActive) {
+        item?.classList.add('active');
       }
     });
   });

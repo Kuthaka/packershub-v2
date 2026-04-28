@@ -1,87 +1,71 @@
 ---
 ---
-<section class="hero" id="home">
-  <div class="hero-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-    <div class="hero-grid"></div>
-  </div>
-
-  <!-- Floating Info Boxes -->
-  <div class="hero-float-box hero-float-box-1 animate-fadeUp" style="animation-delay: 0.6s;">
-    <div class="float-icon" style="background:rgba(201,148,58,0.2);">⭐</div>
-    <div class="float-text">
-      <div class="float-num" style="color:#F5D98B;">4.9/5 Rating</div>
-      <div class="float-label">3,800+ Verified Reviews</div>
-    </div>
-  </div>
-  <div class="hero-float-box hero-float-box-2 animate-fadeUp" style="animation-delay: 0.8s;">
-    <div class="float-icon" style="background:rgba(37,211,102,0.2);">✅</div>
-    <div class="float-text">
-      <div class="float-num" style="color:#86efac;">IBA Approved</div>
-      <div class="float-label">Government Verified</div>
-    </div>
-  </div>
-  <div class="hero-float-box hero-float-box-3 animate-fadeUp" style="animation-delay: 1s;">
-    <div class="float-icon" style="background:rgba(232,83,122,0.2);">🛡</div>
-    <div class="float-text">
-      <div class="float-num" style="color:#FCA5A5;">100% Insured</div>
-      <div class="float-label">Zero Damage Policy</div>
-    </div>
-  </div>
-
+<section class="city-hero">
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-pretitle animate-fadeUp">
-          <span class="badge badge-gold">🏆 South India's #1 Packers & Movers</span>
-          <div class="hero-rating">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">4.9 • 3,847 reviews</span>
-          </div>
+    <div class="city-hero-grid">
+      <div class="animate-fadeUp">
+        <div class="city-badge">
+          <span style="width:8px;height:8px;background:#16A34A;border-radius:50%;display:inline-block;"></span>
+          South India's #1 Movers · 15+ Years
         </div>
-
-        <h1 class="hero-title animate-fadeUp" style="animation-delay: 0.1s;">
-          Move Smarter.<br/>
-          <span class="line-gold">Move Safer.</span><br/>
-          <!-- <span class="line-outline">Move with PackersHub.</span> -->
+        <h1>
+          Relocate with<br>
+          the <span class="hl">Experts</span>
         </h1>
-
-        <p class="hero-desc animate-fadeUp" style="animation-delay: 0.2s;">
-          South India's most trusted relocation experts. We handle your precious belongings with military-grade care across 75 cities in Andhra Pradesh, Telangana, Tamil Nadu, Karnataka & Kerala — with zero hassle, 100% transparency, and a smile.
-        </p>
-
-        <div class="hero-actions animate-fadeUp" style="animation-delay: 0.3s;">
-          <a href="tel:+917731074075" class="btn btn-gold" style="font-size:16px; padding:18px 36px;">
-            📞 Get FREE Quote Now
-          </a>
-          <a href="https://wa.me/917731074075" class="btn btn-outline" style="font-size:16px; padding:18px 36px;">
-            💬 WhatsApp Us
-          </a>
+        <p>IBA Approved movers serving 75+ cities across AP, TS, TN, KA & Kerala. Professional household shifting, office relocation, and vehicle transport with zero damage guarantee.</p>
+        
+        <div class="city-cta">
+          <a href="tel:+917731074075" class="btn btn-primary btn-lg">📞 Get FREE Quote</a>
+          <a href="https://wa.me/917731074075" class="btn btn-accent btn-lg" target="_blank">💬 WhatsApp</a>
         </div>
+        
+        <div class="trust-pills">
+          <span class="trust-pill">✅ IBA Approved</span>
+          <span class="trust-pill">⭐ 4.9★ Rated</span>
+          <span class="trust-pill">🛡 100% Insured</span>
+          <span class="trust-pill">💰 From ₹3,999</span>
+        </div>
+      </div>
 
-        <div class="hero-stats animate-fadeUp" style="animation-delay: 0.4s;">
-          <div class="hero-stat">
-            <div class="hero-stat-num">50,000<span>+</span></div>
-            <div class="hero-stat-label">Happy Families</div>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">75<span>+</span></div>
-            <div class="hero-stat-label">Cities Served</div>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">15<span>+</span></div>
-            <div class="hero-stat-label">Years Experience</div>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">0<span>%</span></div>
-            <div class="hero-stat-label">Damage Rate</div>
-          </div>
+      <div class="animate-fadeUp" style="animation-delay: 0.2s;">
+        <div class="quote-card">
+          <div class="q-title">⚡ Get FREE Moving Quote</div>
+          <div class="q-sub">Instant response · No commitment · 100% free</div>
+          <form id="heroQuoteForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Moving From</label>
+                <input type="text" name="from" placeholder="Source City" required>
+              </div>
+              <div class="form-group">
+                <label>Moving To</label>
+                <input type="text" name="to" placeholder="Destination City" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Service Type</label>
+              <select name="service" required>
+                <option value="">Select Service</option>
+                <option>Household Shifting</option>
+                <option>Office Relocation</option>
+                <option>Car Transport</option>
+                <option>Bike Transport</option>
+                <option>Storage</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="+91 XXXXXXXXXX" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">🚀 Get My FREE Quote Now</button>
+          </form>
+          <div class="form-note">🔒 Safe & Confidential · No spam</div>
         </div>
       </div>
     </div>
@@ -89,206 +73,187 @@
 </section>
 
 <style>
-  .hero {
+  .city-hero {
+    background: linear-gradient(135deg, #EEF3FF 0%, #F4F7FE 60%, #FFFBF5 100%);
+    padding: 100px 0 80px;
     position: relative;
-    min-height: 100vh;
-    background: var(--gradient-hero);
     overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    padding-top: 60px;
   }
-
-  /* 3D Animated Background */
-  .hero-bg {
+  .city-hero::before {
+    content: '';
     position: absolute;
     inset: 0;
-    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B4FD8' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
   }
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-  }
-  .orb-1 {
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(21,71,160,0.4), transparent 70%);
-    top: -100px; right: -100px;
-    animation: orb1 12s ease-in-out infinite;
-  }
-  .orb-2 {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,148,58,0.2), transparent 70%);
-    bottom: -100px; left: -100px;
-    animation: orb2 15s ease-in-out infinite;
-  }
-  .orb-3 {
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(232,83,122,0.15), transparent 70%);
-    top: 50%; left: 40%;
-    animation: orb1 18s ease-in-out infinite reverse;
-  }
-  .orb-4 {
-    width: 250px; height: 250px;
-    background: radial-gradient(circle, rgba(139,155,90,0.2), transparent 70%);
-    top: 20%; left: 60%;
-    animation: orb2 10s ease-in-out infinite;
-  }
-
-  /* Grid overlay */
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image: 
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  /* Floating boxes */
-  .hero-float-box {
-    position: absolute;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 16px 20px;
-    display: flex;
+  .city-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
     align-items: center;
-    gap: 12px;
-    animation: float 6s ease-in-out infinite;
-    z-index: 5;
-  }
-  .hero-float-box-1 {
-    top: 18%;
-    right: 8%;
-    animation-delay: 0s;
-  }
-  .hero-float-box-2 {
-    bottom: 28%;
-    right: 12%;
-    animation-delay: 2s;
-  }
-  .hero-float-box-3 {
-    top: 35%;
-    right: 3%;
-    animation-delay: 4s;
-  }
-  .float-icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-  }
-  .float-text { color: rgba(255,255,255,0.9); }
-  .float-num { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
-  .float-label { font-size: 11px; color: rgba(255,255,255,0.5); font-family: var(--font-ui); }
-
-  .hero-inner {
     position: relative;
-    z-index: 10;
-    width: 100%;
+    z-index: 1;
   }
-  .hero-content {
-    max-width: 720px;
-  }
-  .hero-pretitle {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .hero-rating {
-    display: flex;
+  
+  .city-badge {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(201,148,58,0.3);
+    background: #fff;
+    border: 1.5px solid var(--border);
+    padding: 8px 16px;
     border-radius: 100px;
-    padding: 6px 14px;
-  }
-  .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
-  .rating-text { font-size: 13px; color: rgba(255,255,255,0.8); font-family: var(--font-ui); }
-
-  .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 8px rgba(27,79,216,0.08);
     margin-bottom: 24px;
   }
-  .hero-title .line-gold {
-    background: var(--gradient-gold);
-    background-size: 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s linear infinite;
+  
+  .city-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    color: var(--text-primary);
   }
-  .hero-title .line-outline {
-    -webkit-text-stroke: 2px rgba(255,255,255,0.4);
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero-desc {
-    font-size: 1.15rem;
-    color: rgba(255,255,255,0.7);
+  .city-hero h1 .hl { color: var(--primary); }
+  
+  .city-hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 40px;
-    max-width: 580px;
+    max-width: 540px;
   }
-
-  .hero-actions {
+  
+  .city-cta {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
-
-  .hero-stats {
+  
+  .trust-pills {
     display: flex;
-    gap: 40px;
+    gap: 16px;
     flex-wrap: wrap;
   }
-  .hero-stat {
+  .trust-pill {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
   }
-  .hero-stat-num {
+
+  /* QUOTE CARD */
+  .quote-card {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 24px 80px rgba(27,79,216,0.18);
+    padding: 32px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .quote-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 28px;
+    right: 28px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 0 0 4px 4px;
+  }
+  .q-title {
     font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: var(--text-primary);
   }
-  .hero-stat-num span { color: var(--gold); }
-  .hero-stat-label {
+  .q-sub {
     font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    font-family: var(--font-ui);
+    color: var(--text-muted);
+    margin-bottom: 24px;
   }
-  .hero-stat-divider {
-    width: 1px;
-    background: rgba(255,255,255,0.12);
-    align-self: stretch;
+  
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .form-group select, .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+    background: var(--bg);
+  }
+  .form-group select:focus, .form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(27,79,216,0.1);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 12px;
   }
 
-  @media (max-width: 1024px) {
-    .hero-float-box { display: none; }
+  @media (max-width: 992px) {
+    .city-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .city-hero { padding: 60px 0; text-align: center; }
+    .city-hero p { margin: 0 auto 40px; }
+    .city-cta, .trust-pills { justify-content: center; }
+    .quote-card { max-width: 480px; margin: 0 auto; }
   }
-
-  @media (max-width: 768px) {
-    .hero { padding: 40px 0 60px; text-align: center; }
-    .hero-content { margin: 0 auto; }
-    .hero-pretitle { justify-content: center; }
-    .hero-actions { justify-content: center; }
-    .hero-stats { justify-content: center; gap: 24px; }
-    .hero-stat-divider { display: none; }
-    .hero-title { font-size: 2.8rem; }
+  
+  @media (max-width: 480px) {
+    .form-row { grid-template-columns: 1fr; gap: 0; }
   }
 </style>
+
+<script>
+  const form = document.getElementById('heroQuoteForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.submit-btn');
+    if (btn) {
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✅ Quote Sent! Redirecting...';
+      btn.style.background = '#16A34A';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        (form as HTMLFormElement).reset();
+      }, 3000);
+    }
+  });
+</script>

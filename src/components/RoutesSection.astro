@@ -1,0 +1,119 @@
+---
+---
+<section class="routes-section">
+  <div class="container">
+    <div class="section-header animate-fadeUp">
+      <div class="chip">💰 Route Pricing</div>
+      <h2>Popular Moving Rates</h2>
+      <p>Transparent, fixed pricing for all popular routes across South India.</p>
+    </div>
+    <div class="table-container animate-fadeUp">
+      <table class="route-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Distance</th>
+            <th>1 BHK</th>
+            <th>2 BHK</th>
+            <th>3 BHK</th>
+            <th>Transit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nellore → Hyderabad</td>
+            <td>400 km</td>
+            <td class="price-tag">₹7,999</td>
+            <td class="price-tag">₹11,999</td>
+            <td class="price-tag">₹16,999</td>
+            <td class="days-tag">1–2 days</td>
+          </tr>
+          <tr>
+            <td>Vijayawada → Hyderabad</td>
+            <td>280 km</td>
+            <td class="price-tag">₹6,499</td>
+            <td class="price-tag">₹9,999</td>
+            <td class="price-tag">₹14,499</td>
+            <td class="days-tag">1 day</td>
+          </tr>
+          <tr>
+            <td>Chennai → Bengaluru</td>
+            <td>350 km</td>
+            <td class="price-tag">₹7,499</td>
+            <td class="price-tag">₹10,999</td>
+            <td class="price-tag">₹15,499</td>
+            <td class="days-tag">1–2 days</td>
+          </tr>
+          <tr>
+            <td>Hyderabad → Bengaluru</td>
+            <td>570 km</td>
+            <td class="price-tag">₹9,999</td>
+            <td class="price-tag">₹14,999</td>
+            <td class="price-tag">₹20,999</td>
+            <td class="days-tag">2 days</td>
+          </tr>
+          <tr>
+            <td>Visakhapatnam → Vijayawada</td>
+            <td>350 km</td>
+            <td class="price-tag">₹7,499</td>
+            <td class="price-tag">₹11,499</td>
+            <td class="price-tag">₹15,999</td>
+            <td class="days-tag">1–2 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">*Prices are indicative estimates. Final quote provided after free home survey.</p>
+  </div>
+</section>
+
+<style>
+  .routes-section { padding: 80px 0; background: #fff; }
+  .table-container {
+    overflow-x: auto;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-top: 40px;
+  }
+  .route-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  .route-table th {
+    background: var(--bg-section);
+    padding: 18px 24px;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 1.5px solid var(--border);
+  }
+  .route-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+  }
+  .route-table tr:last-child td { border-bottom: none; }
+  .price-tag {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .days-tag {
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .table-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .routes-section { padding: 60px 0; }
+  }
+</style>
