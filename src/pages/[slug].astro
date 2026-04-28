@@ -12,6 +12,7 @@ import FloatingActions from '../components/FloatingActions.astro';
 import { locations } from '../data/locations';
 import { stateData } from '../data/states';
 import { cityAPData } from '../data/city-ap';
+import { cityTGData } from '../data/city-tg';
 import type { StateContent, CityContent } from '../data/types';
 
 export async function getStaticPaths() {
@@ -24,8 +25,8 @@ export async function getStaticPaths() {
 const { location } = Astro.props;
 const isState = location.type === 'state';
 
-// Combine all city data sources (currently only city-ap.ts)
-const allCityData = { ...cityAPData };
+// Combine all city data sources
+const allCityData = { ...cityAPData, ...cityTGData };
 const content = isState ? stateData[location.slug] : allCityData[location.slug];
 
 // Type-safe access
