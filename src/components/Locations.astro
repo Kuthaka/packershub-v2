@@ -1,5 +1,9 @@
 ---
 import { locations } from '../data/locations';
+
+const states = locations.filter(l => l.type === 'state');
+const getCitiesByState = (stateName: string) => 
+  locations.filter(l => l.type === 'city' && l.state === stateName);
 ---
 <section class="locations-section" id="locations">
   <div class="container">
@@ -10,18 +14,24 @@ import { locations } from '../data/locations';
     </div>
 
     <div class="states-tabs animate-fadeUp">
-      {locations.map((state, index) => (
-        <button class={`state-tab ${index === 0 ? 'active' : ''}`} data-state={state.state.toLowerCase().replace(/ /g, '-')}>
-          {state.state} ({state.cities.length})
+      {states.map((state, index) => (
+        <button 
+          class={`state-tab ${index === 0 ? 'active' : ''}`} 
+          data-state={state.slug}
+        >
+          {state.name} ({getCitiesByState(state.name).length})
         </button>
       ))}
     </div>
 
-    {locations.map((state, index) => (
-      <div class={`cities-panel ${index === 0 ? 'active' : ''}`} id={`state-${state.state.toLowerCase().replace(/ /g, '-')}`}>
+    {states.map((state, index) => (
+      <div 
+        class={`cities-panel ${index === 0 ? 'active' : ''}`} 
+        id={`state-${state.slug}`}
+      >
         <div class="cities-grid">
-          {state.cities.map(city => (
-            <a href={`/packers-and-movers-in-${city.name.toLowerCase().replace(/ /g, '-')}`} class="city-card">
+          {getCitiesByState(state.name).map(city => (
+            <a href={`/${city.slug}/`} class="city-card">
               <div class="city-info">
                 <span class="city-dot"></span>
                 <span class="city-name">{city.name}</span>
@@ -29,6 +39,9 @@ import { locations } from '../data/locations';
               <span class="city-arrow">→</span>
             </a>
           ))}
+        </div>
+        <div class="view-state-cta">
+          <a href={`/${state.slug}/`} class="btn btn-outline">View All {state.name} Services</a>
         </div>
       </div>
     ))}
@@ -103,6 +116,26 @@ import { locations } from '../data/locations';
   }
   @media (max-width: 480px) {
     .cities-grid { grid-template-columns: 1fr; }
+  }
+
+  .view-state-cta {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 12px 32px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
   }
 
   @keyframes fadeIn {
